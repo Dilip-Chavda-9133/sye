@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SYE - Shree Yadunandan Enterprise</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <meta name="description" content="Shree Yadunandan Enterprise - Industrial Machines and Breaker Services in Gujarat">
+        <meta name="theme-color" content="#111827">
+
+        <style>
+            /* ===== GLOBAL ===== */
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:'Poppins',sans-serif;
+                scroll-behavior:smooth;
+            }
+            body{
+                background:#ffffff;
+                color:#1f2937;
+                overflow-x:hidden;
+            }
+
+            /* ===== HEADER ===== */
+            header{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:20px 60px;
+                background:white;
+                box-shadow:0 4px 15px rgba(0,0,0,0.1);
+            }
+            .logo-text h1{
+                font-size:30px;
+                letter-spacing:4px;
+                color:#f97316;
+            }
+            .logo-text p{
+                font-size:20px;
+                color:#555;
+            }
+
+            /* ===== STICKY NAVBAR ===== */
+            nav{
+                position:sticky;
+                top:0;
+                z-index:1000;
+                background:#111827;
+                text-align:center;
+                box-shadow:0 4px 10px rgba(0,0,0,0.2);
+            }
+            nav a{
+                display:inline-block;
+                padding:18px 30px;
+                color:white;
+                text-decoration:none;
+                font-weight:500;
+                position:relative;
+                transition:0.3s;
+            }
+            nav a:hover{ color:#00e5ff; }
+            nav a.active{ color:#00e5ff; }
+            nav a::after{
+                content:'';
+                position:absolute;
+                left:0;
+                bottom:0;
+                width:0%;
+                height:3px;
+                background:#00e5ff;
+                transition:0.4s;
+            }
+            nav a.active::after{ width:100%; }
+
+            /* ===== RESPONSIVE NAVBAR ===== */
+
+            .nav-container{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                position:relative;
+            }
+
+            .nav-links{
+                display:flex;
+            }
+
+            /* Hide hamburger on desktop */
+            .menu-toggle{
+                display:none;
+                position:absolute;
+                right:20px;
+                font-size:24px;
+                color:black;
+                cursor:pointer;
+            }
+
+            /* Mobile Design */
+            @media(max-width:768px){
+
+                .nav-links{
+                    flex-direction:column;
+                    width:100%;
+                    background:#111827;
+                    position:absolute;
+                    top:100%;
+                    left:0;
+                    display:none;
+                    animation:slideDown 0.3s ease;
+                }
+
+                .nav-links a{
+                    display:block;
+                    width:100%;
+                    border-bottom:1px solid rgba(255,255,255,0.1);
+                    text-align:center;
+                }
+
+                .nav-links.show{
+                    display:flex;
+                }
+
+                .menu-toggle{
+                    display:block;
+                }
+            }
+
+            @keyframes slideDown{
+                from{opacity:0;transform:translateY(-10px);}
+                to{opacity:1;transform:translateY(0);}
+            }
+
+            /* ===== PAGE CONTROL ===== */
+            .page{
+                display:none;
+                padding:80px 60px;
+                min-height:80vh;
+                animation:fadeIn 0.6s ease;
+            }
+            .page.active{ display:block; }
+            @keyframes fadeIn{
+                from{opacity:0;transform:translateY(20px);}
+                to{opacity:1;transform:translateY(0);}
+            }
+
+            /* ===== MACHINE SECTION ===== */
+            .machine-section{
+                margin-bottom:100px;
+            }
+            .machine-section h2{
+                text-align:center;
+                margin-bottom:10px;
+                font-size:28px;
+                color:#0ea5e9;
+            }
+            .machine-model{
+                text-align:center;
+                margin-bottom:40px;
+                font-weight:600;
+                color:#374151;
+            }
+            .machine-row{
+                display:flex;
+                justify-content:center;
+                gap:50px;
+                flex-wrap:wrap;
+            }
+            .slider{
+                position:relative;
+                width: 700px;
+                height:420px;
+                border-radius:15px;
+                overflow:hidden;
+                box-shadow:0 10px 25px rgba(0,0,0,0.2);
+                background:#f3f4f6;
+            }
+            .slider img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                position:absolute;
+                opacity:0;
+                transition:opacity 1s ease;
+            }
+            .slider img.active{ opacity:1; }
+            .arrow{
+                position:absolute;
+                top:50%;
+                transform:translateY(-50%);
+                font-size:22px;
+                background:transparent;
+                color:black;
+                padding:8px 14px;
+                cursor:pointer;
+                border-radius:50%;
+                box-shadow:0 4px 10px rgba(0,0,0,0.2);
+                z-index:2;
+            }
+            .arrow.left{ left:15px; }
+            .arrow.right{ right:15px; }
+            .arrow:hover{
+                background:white;
+            }
+
+            .description{
+                text-align:center;
+                margin-top:25px;
+                color:#4b5563;
+                max-width:900px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            /* ===== BIG DUMPER SLIDER ===== */
+            .dumper-slider{
+                width: 700px;
+                height: 420px;
+            }
+            /* ===== GALLERY ===== */
+            .gallery{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+                gap:25px;
+            }
+            .gallery img{
+                width:100%;
+                height:220px;
+                object-fit:cover;
+                border-radius:12px;
+                cursor:pointer;
+                transition:0.4s;
+                box-shadow:0 6px 15px rgba(0,0,0,0.15);
+            }
+            .gallery img:hover{ transform:scale(1.05); }
+
+            /* ===== POPUP ===== */
+            .popup{
+                display:none;
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background:rgba(0,0,0,0.8);
+                justify-content:center;
+                align-items:center;
+                z-index:2000;
+            }
+            .popup img{
+                max-width:90%;
+                max-height:80%;
+            }
+            .popup span{
+                position:absolute;
+                top:30px;
+                right:40px;
+                font-size:40px;
+                color:white;
+                cursor:pointer;
+            }
+
+            /* ===== WORKING ===== */
+            .working-box{
+                background:#f9fafb;
+                padding:50px 30px;
+                border-radius:15px;
+                box-shadow:0 8px 25px rgba(0,0,0,0.1);
+                max-width:1200px;
+                margin:auto;
+                line-height:1.8;
+                font-size:16px;
+            }
+            .working-box div:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* ===== ABOUT ===== */
+            .about-images{
+                display:flex;
+                justify-content:center;
+                gap:100px;
+                flex-wrap:wrap;
+                margin-bottom:80px;
+            }
+            .about-images img{
+                width:300px;
+                height:400px;
+                object-fit:cover;
+                border-radius:15px;
+                box-shadow:0 6px 20px rgba(0,0,0,0.15);
+                transition:0.4s;
+            }
+            .about-images img:hover{ transform:scale(1.05); }
+            .contact{
+                text-align:center;
+                line-height:2;
+                font-size:17px;
+            }
+
+            /* ===== WHATSAPP ===== */
+            .whatsapp{
+                position:fixed;
+                bottom:25px;
+                right:25px;
+                background:#25D366;
+                color:white;
+                padding:18px 20px;
+                border-radius:50%;
+                font-size:26px;
+                box-shadow:0 8px 20px rgba(0,0,0,0.3);
+                text-decoration:none;
+            }
+            .whatsapp:hover { background:#20ba5a; }
+
+            /* ===== RESPONSIVE ===== */
+            @media(max-width:768px){
+
+                header{
+                    flex-direction:column;
+                    text-align:center;
+                    padding:20px;
+                }
+
+                header img{
+                    margin-top:15px;
+                    width:90px;
+                }
+
+                nav a{
+                    display:block;
+                    width:100%;
+                    border-bottom:1px solid rgba(255,255,255,0.1);
+                }
+
+                .page{
+                    padding:40px 20px;
+                }
+
+                .machine-row{
+                    flex-direction:column;
+                    gap:30px;
+                }
+
+                .slider{
+                    width:100%;
+                    height:220px;
+                }
+
+                .dumper-slider{
+                    width: 100%;
+                    height: 260px;
+                }
+
+                .about-images img{
+                    width:100%;
+                    height:auto;
+                }
+
+                .gallery img{
+                    height:180px;
+                }
+            }
+
+            .popup .arrow{
+                color:black;
+                font-size:40px;
+                position:absolute;
+                top:50%;
+                transform:translateY(-50%);
+                cursor:pointer;
+                padding:10px;
+            }
+
+            .popup .arrow:hover{ background:white; }
+            .popup .left{ left:30px; }
+            .popup .right{ right:30px; }
+        </style>
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo-text">
+                <h1>SYE</h1>
+                <p>Shree Yadunandan Enterprise</p>
+            </div>
+            <img src="images/logo.jpg" width="250">
+        </header>
+
+        <!-- NAV -->
+        <nav>
+            <div class="nav-container">
+
+                <!-- Hamburger Icon -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- Nav Links -->
+                <div class="nav-links" id="navLinks">
+                    <a href="#" class="active" onclick="showPage('home',this)">Home</a>
+                    <a href="#" onclick="showPage('images',this)">Images</a>
+                    <a href="#" onclick="showPage('working',this)">About Us</a>
+                    <a href="#" onclick="showPage('about',this)">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HOME -->
+        <section id="home" class="page active"></section>
+
+        <!-- IMAGES -->
+        <section id="images" class="page">
+            <h2 style="text-align:center;margin-bottom:40px;">Machine Gallery</h2>
+            <div class="gallery" id="gallery"></div>
+        </section>
+
+        <!-- WORKING / EXPERIENCE -->
+        <section id="working" class="page">
+            <h2 style="text-align:center;margin-bottom:50px;color:#0ea5e9;font-size:32px;">Our Experience</h2>
+            <div class="working-box">
+                <div style="text-align:center; margin-bottom:40px;">
+                    <p style="font-size:20px; font-weight:600;">🛠 <span style="color:#f97316;">Working Since:</span> 2004</p>
+                    <p style="font-size:16px; line-height:1.8;">With over <strong>20 years of experience</strong> in the infrastructure sector, we have successfully executed projects across multiple states in India.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+
+                    <!-- States Card -->
+                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
+                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🌍 States We Have Worked In</h3>
+                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
+                            <li>Gujarat</li>
+                            <li>Rajasthan</li>
+                            <li>Uttar Pradesh</li>
+                            <li>Madhya Pradesh</li>
+                            <li>Maharashtra</li>
+                            <li>Kerala</li>
+                        </ul>
+                    </div>
+
+                    <!-- Projects Card -->
+                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
+                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🏗️ Types of Projects Completed</h3>
+                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
+                            <li>Pipeline Projects</li>
+                            <li>Road Construction</li>
+                            <li>Gutter (Drainage) Line Works</li>
+                            <li>Mining Projects</li>
+                            <li>Water Canal Projects</li>
+                        </ul>
+                    </div>
+
+                    <!-- Companies Card -->
+                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
+                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🤝 Companies We Have Worked With</h3>
+                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
+                            <li>L&T (Larsen & Toubro)</li>
+                            <li>Megha Engineering</li>
+                            <li>GMDC</li>
+                            <li>AEC</li>
+                            <li>Mantena</li>
+                            <li>JR Infra</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US -->
+        <section id="about" class="page">
+            <h2 style="text-align:center;margin-bottom:40px;">About Us</h2>
+            <div class="about-images">
+                <div>
+                    <img src="images/nileshbhai.jpg">
+                    <p style="text-align:center;margin-top:10px;">Nileshbhai Chavda</p>
+                    <p style="text-align:center;margin-top:5px;">📞 <a href="tel:+919737799755">+91 97377 99755</a></p>
+                </div>
+                <div>
+                    <img src="images/anilbhai.jpg">
+                    <p style="text-align:center;margin-top:10px;">Anilbhai Suva</p>
+                    <p style="text-align:center;margin-top:5px;">📞 <a href="tel:+917990348678">+91 79903 48678</a></p>
+                </div>
+            </div>
+            <div class="contact">
+                <p>📧 <a href="mailto:anil.suva01@gmail.com">anil.suva01@gmail.com</a></p>
+                <p>📍 <a href="https://maps.app.goo.gl/2iMzkSXdpaFVbEL87" target="_blank">Shree Yadunandan Enterprise, Jamnagar, Gujarat</a></p>
+            </div>
+        </section>
+
+        <!-- WHATSAPP -->
+        <a class="whatsapp" href="https://wa.me/917990348678" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- GALLERY POPUP -->
+        <div class="popup" id="popup">
+            <span onclick="closePopup()">×</span>
+            <img id="popupImg" src="">
+        </div>
+
+        <footer style="background:#111827;color:white;text-align:center;padding:20px;margin-top:50px;">
+            © 2026 Shree Yadunandan Enterprise | All Rights Reserved
+        </footer>
+
+        <script>
+            /* ===== MOBILE MENU TOGGLE ===== */
+
+            function toggleMenu(){
+                document.getElementById("navLinks").classList.toggle("show");
+            }
+
+            /* Auto close menu after click */
+            document.querySelectorAll('.nav-links a').forEach(link=>{
+                link.addEventListener("click",()=>{
+                    document.getElementById("navLinks").classList.remove("show");
+                });
+            });
+            
+            /* PAGE SWITCH */
+            function showPage(id,element){
+                document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+                document.getElementById(id).classList.add('active');
+                document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+                element.classList.add('active');
+                window.scrollTo(0,0);
+            }
+
+            /* MACHINE DATA WITH DESCRIPTIONS */
+            let machineData = [
+                {name:"Sunny 215", model:2025, description:"Sunny 215 machine (2025 Model) equipped with a BTC Drilmax 810 Hydraulic Breaker."},
+                {name: "Tata Signa 2832.TK", model: 2026, description: "Tata Signa 2832.TK Dumper (2026 Model) equipped with a heavy-duty Hyva Hydraulic Tipping System and reinforced mining body."},
+                {name:"Hyundai 210", model:2024, description:"Hyundai 210 machine (2024 Model) equipped with a Indus Saga 200 Hydraulic Breaker."},
+                {name:"Hyundai 210", model:2023, description:"Hyundai 210 machine (2023 Model) equipped with a Rockstar Hydraulic Breaker."},
+                {name:"Hyundai 210", model:2018, description:"Hyundai 210 machine (2018 Model) equipped with a Rockstar Hydraulic Breaker."}
+            ];
+
+            let home = document.getElementById("home");
+
+            machineData.forEach((machine,index)=>{
+
+                home.innerHTML += `
+
+                <div class="machine-section">
+
+                    <h2>${machine.name}</h2>
+
+                    <div class="machine-model">
+                        Model: ${machine.model}
+                    </div>
+
+                    <div class="machine-row">
+
+                        <div>
+                            <div class="slider ${machine.name.includes('Tata') ? 'dumper-slider' : ''}" 
+                                id="machine${index}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="description">
+                        ${machine.description}
+                    </p>
+
+                </div>
+
+                `;
+
+            });
+
+            /* SLIDER FUNCTION */
+            function createSlider(id, images){
+                let slider=document.getElementById(id);
+                images.forEach((src,i)=>{
+                let img=document.createElement("img");
+                img.src=src;
+                if(i===0) img.classList.add("active");
+                slider.appendChild(img);
+            });
+            let left=document.createElement("div"); left.className="arrow left"; left.innerHTML="❮";
+            let right=document.createElement("div"); right.className="arrow right"; right.innerHTML="❯";
+            slider.appendChild(left); slider.appendChild(right);
+            let index=0;
+            let imgs=slider.querySelectorAll("img");
+            function showSlide(i){ imgs.forEach(img=>img.classList.remove("active")); imgs[i].classList.add("active"); }
+            right.onclick=function(){ index=(index+1)%imgs.length; showSlide(index); };
+            left.onclick=function(){ index=(index-1+imgs.length)%imgs.length; showSlide(index); };
+            setInterval(()=>{ index=(index+1)%imgs.length; showSlide(index); },5000);
+            }
+
+            /* ADD MACHINE IMAGES */
+            /* SUNNY */
+            createSlider("machine0", [
+                "images/m1-1.jpg",
+                "images/m1-2.jpg",
+                "images/m1-3.jpg",
+                "images/m1-4.jpg"
+            ]);
+
+
+            /* DUMPER ONLY */
+            createSlider("machine1", [
+                "images/d-1.jpg",
+                "images/d-2.jpg",
+                "images/d-3.jpg"
+            ]);
+
+            /* HYUNDAI 2024 */
+            createSlider("machine2", [
+                "images/m2-1.jpg",
+                "images/m2-2.jpg",
+                "images/m2-3.jpg",
+                "images/m2-4.jpg"
+            ]);
+
+
+            /* HYUNDAI 2023 */
+            createSlider("machine3", [
+                "images/m3-1.jpg",
+                "images/m3-2.jpg",
+                "images/m3-3.jpg",
+                "images/m3-4.jpg"
+            ]);
+
+
+            /* HYUNDAI 2018 */
+            createSlider("machine4", [
+                "images/m4-1.jpg",
+                "images/m4-2.jpg",
+                "images/m4-3.jpg",
+                "images/m4-4.jpg"
+            ]);
+
+
+
+            /* ================= GALLERY IMAGES ================= */
+
+            let galleryImgs=[
+                "images/m1-1.jpg","images/m1-2.jpg",
+                "images/m1-3.jpg","images/m1-4.jpg",
+                "images/m2-1.jpg","images/m2-2.jpg",
+                "images/m2-3.jpg","images/m2-4.jpg",
+                "images/m3-2.jpg","images/m3-3.jpg",
+                "images/m3-4.jpg","images/d-1.jpg",
+                "images/d-2.jpg","images/d-3.jpg"
+            ];
+
+            let gallery=document.getElementById("gallery");
+
+            galleryImgs.forEach((src,index)=>{
+                let img=document.createElement("img");
+                img.src=src;
+                img.loading="lazy";
+                img.onclick=()=>openPopup(index);
+                gallery.appendChild(img);
+            });
+
+            /* ================= POPUP SLIDER ================= */
+
+            let currentIndex=0;
+
+            function openPopup(index){
+                currentIndex=index;
+                document.getElementById("popup").style.display="flex";
+                showPopupImage();
+            }
+
+            function closePopup(){
+                document.getElementById("popup").style.display="none";
+            }
+
+            function showPopupImage(){
+                document.getElementById("popupImg").src=galleryImgs[currentIndex];
+            }
+
+            function nextImage(){
+                currentIndex=(currentIndex+1)%galleryImgs.length;
+                showPopupImage();
+            }
+
+            function prevImage(){
+                currentIndex=(currentIndex-1+galleryImgs.length)%galleryImgs.length;
+                showPopupImage();
+            }
+
+            /* Arrow Buttons */
+            document.getElementById("popup").innerHTML += `
+                <div class="arrow left" onclick="prevImage()">❮</div>
+                <div class="arrow right" onclick="nextImage()">❯</div>
+            `;
+
+            /* Close when clicking background */
+            document.getElementById("popup").addEventListener("click",function(e){
+                if(e.target.id==="popup"){
+                    closePopup();
+                }
+            });
+
+            /* Keyboard Support */
+            document.addEventListener("keydown",(e)=>{
+                if(document.getElementById("popup").style.display==="flex"){
+                    if(e.key==="ArrowRight") nextImage();
+                    if(e.key==="ArrowLeft") prevImage();
+                    if(e.key==="Escape") closePopup();
+                }
+            });
+
+            /* Touch Swipe Support */
+            let startX=0;
+
+            document.getElementById("popup").addEventListener("touchstart",(e)=>{
+                startX=e.touches[0].clientX;
+            });
+
+            document.getElementById("popup").addEventListener("touchend",(e)=>{
+                let endX=e.changedTouches[0].clientX;
+                if(startX-endX>50) nextImage();
+                if(endX-startX>50) prevImage();
+            });
+        </script>
+    </body>
+</html>
