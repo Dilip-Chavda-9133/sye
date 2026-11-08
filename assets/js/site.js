@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   
+  
   /* ---------- 4. AUTOMATIC PHOTO SLIDESHOW ---------- */
 
   const photoGroups = {
@@ -115,13 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ]
   };
 
-
-  // Start slideshow for matching images
-
   document.querySelectorAll("img").forEach(function (image) {
 
     const originalSrc = image.getAttribute("src");
-
     if (!originalSrc) return;
 
     let imagePath;
@@ -132,58 +129,65 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const group = Object.entries(photoGroups).find(function ([name, slides]) {
-      return slides.includes(imagePath);
-    });
+    const matchedGroup = Object.values(photoGroups).find(
+      function (slides) {
+        return slides.includes(imagePath);
+      }
+    );
 
-    if (!group) return;
+    if (!matchedGroup || matchedGroup.length < 2) return;
 
-    const slides = group[1];
-
-    if (slides.length < 2) return;
-
-    let currentIndex = slides.indexOf(imagePath);
+    let currentIndex = matchedGroup.indexOf(imagePath);
+    let isChanging = false;
 
     image.classList.add("auto-slideshow-image");
 
-    image.style.transition = "opacity 1s ease-in-out";
-
-    // Preload slideshow images
-    slides.forEach(function (src) {
+    // Preload all slideshow images
+    matchedGroup.forEach(function (src) {
       const preload = new Image();
       preload.src = src;
     });
-    
-    
-    // Change image every 3 seconds with smooth fade
 
+    // Change image every 3 seconds
     window.setInterval(function () {
 
-        const nextIndex = (currentIndex + 1) % slides.length;
-        const nextImage = new Image();
+      if (isChanging) return;
 
-        nextImage.onload = function () {
+      const nextIndex = (currentIndex + 1) % matchedGroup.length;
+      const nextImage = new Image();
 
-            image.style.opacity = "0";
+      nextImage.onload = function () {
 
-            window.setTimeout(function () {
+        isChanging = true;
 
-                currentIndex = nextIndex;
-                image.src = slides[currentIndex];
+        // Fade out completely
+        image.style.opacity = "0";
 
-                requestAnimationFrame(function () {
-                    image.style.opacity = "1";
-                });
+        window.setTimeout(function () {
 
-            }, 500);
+          currentIndex = nextIndex;
+          image.src = matchedGroup[currentIndex];
 
-        };
+          // Start fade in after image change
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              image.style.opacity = "1";
+              isChanging = false;
+            });
+          });
 
-        nextImage.onerror = function () {
-            console.warn("Slideshow image not found:", slides[nextIndex]);
-        };
+        }, 1000);
 
-        nextImage.src = slides[nextIndex];
+      };
+
+      nextImage.onerror = function () {
+        console.warn(
+          "Slideshow image not found:",
+          matchedGroup[nextIndex]
+        );
+      };
+
+      nextImage.src = matchedGroup[nextIndex];
 
     }, 3000);
 
