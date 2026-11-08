@@ -723,3 +723,8 @@ a {
   }
 
 }
+
+/* Hide top contact information bar */
+.topbar {
+    display: none !important;
+}
