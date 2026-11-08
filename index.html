@@ -1,794 +1,657 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        
-        <link rel="canonical" href="https://syeinfra.vercel.app/">
-
-        <title>Shree Yadunandan Enterprise (SYE Infra) | Infrastructure & Heavy Machinery Services in Gujarat</title>
-
-        <meta name="description" content="Shree Yadunandan Enterprise (SYE Infra), Jamnagar, Gujarat offers industrial machinery, hydraulic breakers, dumpers and infrastructure project services across India.">
-
-        <meta name="keywords" content="Shree Yadunandan Enterprise, SYE Infra, Shree Yadunandan Infra, SYE Infrastructure, Yadunandan Enterprise Gujarat, Shree Yadunandan Enterprise India, SYE Construction, Yadunandan Infrastructure, SYE Engineering, Shree Yadunandan Group, Hydraulic Breaker Services Jamnagar, Industrial Machines Gujarat, Dumper Services Gujarat, Infrastructure Projects India">
-
-        <meta name="author" content="Shree Yadunandan Enterprise">
-
-        <meta name="robots" content="index, follow">
-
-        <meta property="og:title" content="Shree Yadunandan Enterprise | SYE Infra">
-
-        <meta property="og:description" content="Industrial Machines, Hydraulic Breakers, Dumpers and Infrastructure Project Services in Gujarat, India.">
-
-        <meta property="og:url" content="https://syeinfra.vercel.app/">
-
-        <meta property="og:type" content="website">
-
-        <meta name="theme-color" content="#111827">
-
-        <meta name="google-site-verification" content="1yy-7thrgVgQyPLpI5nwSwAuZHAUNqiKUrbSGt_JXAc" />
-
-        <style>
-            /* ===== GLOBAL ===== */
-            *{
-                margin:0;
-                padding:0;
-                box-sizing:border-box;
-                font-family:'Poppins',sans-serif;
-                scroll-behavior:smooth;
-            }
-            body{
-                background:#ffffff;
-                color:#1f2937;
-                overflow-x:hidden;
-            }
-
-            /* ===== HEADER ===== */
-            header{
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                padding:20px 60px;
-                background:white;
-                box-shadow:0 4px 15px rgba(0,0,0,0.1);
-            }
-            .logo-text h1{
-                font-size:30px;
-                letter-spacing:4px;
-                color:#f97316;
-            }
-            .logo-text p{
-                font-size:20px;
-                color:#555;
-            }
-
-            /* ===== STICKY NAVBAR ===== */
-            nav{
-                position:sticky;
-                top:0;
-                z-index:1000;
-                background:#111827;
-                text-align:center;
-                box-shadow:0 4px 10px rgba(0,0,0,0.2);
-            }
-            nav a{
-                display:inline-block;
-                padding:18px 30px;
-                color:white;
-                text-decoration:none;
-                font-weight:500;
-                position:relative;
-                transition:0.3s;
-            }
-            nav a:hover{ color:#00e5ff; }
-            nav a.active{ color:#00e5ff; }
-            nav a::after{
-                content:'';
-                position:absolute;
-                left:0;
-                bottom:0;
-                width:0%;
-                height:3px;
-                background:#00e5ff;
-                transition:0.4s;
-            }
-            nav a.active::after{ width:100%; }
-
-            /* ===== RESPONSIVE NAVBAR ===== */
-
-            .nav-container{
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                position:relative;
-            }
-
-            .nav-links{
-                display:flex;
-            }
-
-            /* Hide hamburger on desktop */
-            .menu-toggle{
-                display:none;
-                position:absolute;
-                right:20px;
-                font-size:24px;
-                color:black;
-                cursor:pointer;
-            }
-
-            /* Mobile Design */
-            @media(max-width:768px){
-
-                .nav-links{
-                    flex-direction:column;
-                    width:100%;
-                    background:#111827;
-                    position:absolute;
-                    top:100%;
-                    left:0;
-                    display:none;
-                    animation:slideDown 0.3s ease;
-                }
-
-                .nav-links a{
-                    display:block;
-                    width:100%;
-                    border-bottom:1px solid rgba(255,255,255,0.1);
-                    text-align:center;
-                }
-
-                .nav-links.show{
-                    display:flex;
-                }
-
-                .menu-toggle{
-                    display:block;
-                }
-            }
-
-            @keyframes slideDown{
-                from{opacity:0;transform:translateY(-10px);}
-                to{opacity:1;transform:translateY(0);}
-            }
-
-            /* ===== PAGE CONTROL ===== */
-            .page{
-                display:none;
-                padding:80px 60px;
-                min-height:80vh;
-                animation:fadeIn 0.6s ease;
-            }
-            .page.active{ display:block; }
-            @keyframes fadeIn{
-                from{opacity:0;transform:translateY(20px);}
-                to{opacity:1;transform:translateY(0);}
-            }
-
-            /* ===== MACHINE SECTION ===== */
-            .machine-section{
-                margin-bottom:100px;
-            }
-            .machine-section h2{
-                text-align:center;
-                margin-bottom:10px;
-                font-size:28px;
-                color:#0ea5e9;
-            }
-            .machine-model{
-                text-align:center;
-                margin-bottom:40px;
-                font-weight:600;
-                color:#374151;
-            }
-            .machine-row{
-                display:flex;
-                justify-content:center;
-                gap:50px;
-                flex-wrap:wrap;
-            }
-            .slider{
-                position:relative;
-                width: 700px;
-                height:420px;
-                border-radius:15px;
-                overflow:hidden;
-                box-shadow:0 10px 25px rgba(0,0,0,0.2);
-                background:#f3f4f6;
-            }
-            .slider img{
-                width:100%;
-                height:100%;
-                object-fit:cover;
-                position:absolute;
-                opacity:0;
-                transition:opacity 1s ease;
-            }
-            .slider img.active{ opacity:1; }
-            .arrow{
-                position:absolute;
-                top:50%;
-                transform:translateY(-50%);
-                font-size:22px;
-                background:transparent;
-                color:black;
-                padding:8px 14px;
-                cursor:pointer;
-                border-radius:50%;
-                box-shadow:0 4px 10px rgba(0,0,0,0.2);
-                z-index:2;
-            }
-            .arrow.left{ left:15px; }
-            .arrow.right{ right:15px; }
-            .arrow:hover{
-                background:white;
-            }
-
-            .description{
-                text-align:center;
-                margin-top:25px;
-                color:#4b5563;
-                max-width:900px;
-                margin-left:auto;
-                margin-right:auto;
-            }
-
-            /* ===== BIG DUMPER SLIDER ===== */
-            .dumper-slider{
-                width: 700px;
-                height: 420px;
-            }
-            /* ===== GALLERY ===== */
-            .gallery{
-                display:grid;
-                grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-                gap:25px;
-            }
-            .gallery img{
-                width:100%;
-                height:220px;
-                object-fit:cover;
-                border-radius:12px;
-                cursor:pointer;
-                transition:0.4s;
-                box-shadow:0 6px 15px rgba(0,0,0,0.15);
-            }
-            .gallery img:hover{ transform:scale(1.05); }
-
-            /* ===== POPUP ===== */
-            .popup{
-                display:none;
-                position:fixed;
-                top:0;
-                left:0;
-                width:100%;
-                height:100%;
-                background:rgba(0,0,0,0.8);
-                justify-content:center;
-                align-items:center;
-                z-index:2000;
-            }
-            .popup img{
-                max-width:90%;
-                max-height:80%;
-            }
-            .popup span{
-                position:absolute;
-                top:30px;
-                right:40px;
-                font-size:40px;
-                color:white;
-                cursor:pointer;
-            }
-
-            /* ===== WORKING ===== */
-            .working-box{
-                background:#f9fafb;
-                padding:50px 30px;
-                border-radius:15px;
-                box-shadow:0 8px 25px rgba(0,0,0,0.1);
-                max-width:1200px;
-                margin:auto;
-                line-height:1.8;
-                font-size:16px;
-            }
-            .working-box div:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-                transition: all 0.3s ease-in-out;
-            }
-
-            /* ===== ABOUT ===== */
-            .about-images{
-                display:flex;
-                justify-content:center;
-                gap:100px;
-                flex-wrap:wrap;
-                margin-bottom:80px;
-            }
-            .about-images img{
-                width:300px;
-                height:400px;
-                object-fit:cover;
-                border-radius:15px;
-                box-shadow:0 6px 20px rgba(0,0,0,0.15);
-                transition:0.4s;
-            }
-            .about-images img:hover{ transform:scale(1.05); }
-            .contact{
-                text-align:center;
-                line-height:2;
-                font-size:17px;
-            }
-
-            /* ===== WHATSAPP ===== */
-            .whatsapp{
-                position:fixed;
-                bottom:25px;
-                right:25px;
-                background:#25D366;
-                color:white;
-                padding:18px 20px;
-                border-radius:50%;
-                font-size:26px;
-                box-shadow:0 8px 20px rgba(0,0,0,0.3);
-                text-decoration:none;
-            }
-            .whatsapp:hover { background:#20ba5a; }
-
-            /* ===== RESPONSIVE ===== */
-            @media(max-width:768px){
-
-                header{
-                    flex-direction:column;
-                    text-align:center;
-                    padding:20px;
-                }
-
-                header img{
-                    margin-top:15px;
-                    width:90px;
-                }
-
-                nav a{
-                    display:block;
-                    width:100%;
-                    border-bottom:1px solid rgba(255,255,255,0.1);
-                }
-
-                .page{
-                    padding:40px 20px;
-                }
-
-                .machine-row{
-                    flex-direction:column;
-                    gap:30px;
-                }
-
-                .slider{
-                    width:100%;
-                    height:220px;
-                }
-
-                .dumper-slider{
-                    width: 100%;
-                    height: 260px;
-                }
-
-                .about-images img{
-                    width:100%;
-                    height:auto;
-                }
-
-                .gallery img{
-                    height:180px;
-                }
-            }
-
-            .popup .arrow{
-                color:black;
-                font-size:40px;
-                position:absolute;
-                top:50%;
-                transform:translateY(-50%);
-                cursor:pointer;
-                padding:10px;
-            }
-
-            .popup .arrow:hover{ background:white; }
-            .popup .left{ left:30px; }
-            .popup .right{ right:30px; }
-        </style>
-    </head>
-    <body>
-
-        <!-- HEADER -->
-        <header>
-            <div class="logo-text">
-                <h1>SYE</h1>
-                <p>Shree Yadunandan Enterprise</p>
-            </div>
-            <img src="images/logo.jpg" width="250">
-        </header>
-
-        <!-- NAV -->
-        <nav>
-            <div class="nav-container">
-
-                <!-- Hamburger Icon -->
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-
-                <!-- Nav Links -->
-                <div class="nav-links" id="navLinks">
-                    <a href="#" class="active" onclick="showPage('home',this)">Home</a>
-                    <a href="#" onclick="showPage('images',this)">Images</a>
-                    <a href="#" onclick="showPage('working',this)">About Us</a>
-                    <a href="#" onclick="showPage('about',this)">Contact Us</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- HOME -->
-        <section id="home" class="page active">
-
-            <h1 style="text-align:center; color:#f97316; font-size:32px; margin-bottom:20px;">
-                Shree Yadunandan Enterprise (SYE Infra)
-            </h1>
-
-            <h2 style="text-align:center; color:#0ea5e9; margin-bottom:25px;">
-                Infrastructure Projects, Industrial Machines & Hydraulic Breaker Services
-            </h2>
-
-            <div style="max-width:1000px; margin:auto; text-align:center; line-height:1.9; color:#374151;">
-
-                <p>
-                    <strong>Shree Yadunandan Enterprise</strong>, also known as
-                    <strong>SYE Infra</strong>, is based in Jamnagar, Gujarat, India.
-                    We have been working in the infrastructure sector since 2004,
-                    with over 20 years of experience in infrastructure projects
-                    and heavy machinery operations.
-                </p>
-
-                <p style="margin-top:15px;">
-                    Our experience includes road construction, pipeline projects,
-                    drainage line works, mining projects and water canal projects
-                    across multiple states in India.
-                </p>
-
-                <p style="margin-top:15px;">
-                    We also provide industrial machinery and equipment services,
-                    including hydraulic breakers, excavators and dumpers.
-                </p>
-
-                <p style="margin-top:15px;">
-                    SYE Infra | Shree Yadunandan Infra | SYE Infrastructure
-                    | Yadunandan Enterprise Gujarat.
-                </p>
-
-                <p style="margin-top:20px; font-weight:600;">
-                    Contact Shree Yadunandan Enterprise, Jamnagar, Gujarat
-                    for business enquiries.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- IMAGES -->
-        <section id="images" class="page">
-            <h2 style="text-align:center;margin-bottom:40px;">Machine Gallery</h2>
-            <div class="gallery" id="gallery"></div>
-        </section>
-
-        <!-- WORKING / EXPERIENCE -->
-        <section id="working" class="page">
-            <h2 style="text-align:center;margin-bottom:50px;color:#0ea5e9;font-size:32px;">Our Experience</h2>
-            <div class="working-box">
-                <div style="text-align:center; margin-bottom:40px;">
-                    <p style="font-size:20px; font-weight:600;">🛠 <span style="color:#f97316;">Working Since:</span> 2004</p>
-                    <p style="font-size:16px; line-height:1.8;">With over <strong>20 years of experience</strong> in the infrastructure sector, we have successfully executed projects across multiple states in India.</p>
-                </div>
-
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
-
-                    <!-- States Card -->
-                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
-                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🌍 States We Have Worked In</h3>
-                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
-                            <li>Gujarat</li>
-                            <li>Rajasthan</li>
-                            <li>Uttar Pradesh</li>
-                            <li>Madhya Pradesh</li>
-                            <li>Maharashtra</li>
-                            <li>Kerala</li>
-                        </ul>
-                    </div>
-
-                    <!-- Projects Card -->
-                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
-                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🏗️ Types of Projects Completed</h3>
-                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
-                            <li>Pipeline Projects</li>
-                            <li>Road Construction</li>
-                            <li>Gutter (Drainage) Line Works</li>
-                            <li>Mining Projects</li>
-                            <li>Water Canal Projects</li>
-                        </ul>
-                    </div>
-
-                    <!-- Companies Card -->
-                    <div style="background:white; padding:25px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:0.3s;">
-                        <h3 style="color:#f97316; margin-bottom:20px; font-size:20px;">🤝 Companies We Have Worked With</h3>
-                        <ul style="list-style-type:circle; margin-left:20px; color:#374151; line-height:1.8;">
-                            <li>L&T (Larsen & Toubro)</li>
-                            <li>Megha Engineering</li>
-                            <li>GMDC</li>
-                            <li>AEC</li>
-                            <li>Mantena</li>
-                            <li>JR Infra</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT US -->
-        <section id="about" class="page">
-            <h2 style="text-align:center;margin-bottom:40px;">About Us</h2>
-            <div class="about-images">
-                <div>
-                    <img src="images/nileshbhai.jpg">
-                    <p style="text-align:center;margin-top:10px;">Nileshbhai Chavda</p>
-                    <p style="text-align:center;margin-top:5px;">📞 <a href="tel:+919737799755">+91 97377 99755</a></p>
-                </div>
-                <div>
-                    <img src="images/anilbhai.jpg">
-                    <p style="text-align:center;margin-top:10px;">Anilbhai Suva</p>
-                    <p style="text-align:center;margin-top:5px;">📞 <a href="tel:+917990348678">+91 79903 48678</a></p>
-                </div>
-            </div>
-            <div class="contact">
-                <p>📧 <a href="mailto:anil.suva01@gmail.com">anil.suva01@gmail.com</a></p>
-                <p>📍 <a href="https://maps.app.goo.gl/2iMzkSXdpaFVbEL87" target="_blank">Shree Yadunandan Enterprise, Jamnagar, Gujarat</a></p>
-            </div>
-        </section>
-
-        <!-- WHATSAPP -->
-        <a class="whatsapp" href="https://wa.me/917990348678" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <!-- GALLERY POPUP -->
-        <div class="popup" id="popup">
-            <span onclick="closePopup()">×</span>
-            <img id="popupImg" src="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101d32">
+
+    <meta name="description" content="Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat, has worked in infrastructure projects and heavy machinery operations since 2004.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://syeinfra.vercel.app/">
+
+    <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shree Yadunandan Enterprise">
+    <meta property="og:title" content="Shree Yadunandan Enterprise | SYE Infra, Jamnagar">
+    <meta property="og:description" content="Infrastructure projects and heavy machinery operations since 2004.">
+    <meta property="og:url" content="https://syeinfra.vercel.app/">
+    <meta property="og:image" content="https://syeinfra.vercel.app/images/m1-1.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Shree Yadunandan Enterprise | SYE Infra, Jamnagar</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Shree Yadunandan Enterprise",
+        "alternateName": "SYE Infra",
+        "url": "https://syeinfra.vercel.app/",
+        "logo": "https://syeinfra.vercel.app/images/logo.jpg",
+        "foundingDate": "2004",
+        "email": "anil.suva01@gmail.com",
+        "telephone": [
+            "+91 97377 99755",
+            "+91 79903 48678"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jamnagar",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+
+    <!-- Main JavaScript -->
+    <script src="/assets/js/site.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="container">
+
+            <span>Jamnagar, Gujarat, India</span>
+
+            <a class="topbar-email" href="mailto:anil.suva01@gmail.com">
+                anil.suva01@gmail.com
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a class="brand" href="/" aria-label="SYE Infra home">
+
+                <img
+                    src="/images/logo.jpg"
+                    alt="Shree Yadunandan Enterprise logo"
+                >
+
+                <span>
+                    <strong>SHREE YADUNANDAN ENTERPRISE</strong>
+
+                    <small>
+                        Infrastructure • Heavy Machinery • Equipment
+                    </small>
+                </span>
+
+            </a>
+
+
+            <!-- Mobile Navigation Button -->
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+            <nav class="nav" aria-label="Main navigation">
+
+                <a href="/" aria-current="page">Home</a>
+
+                <a href="/about.html">About Us</a>
+
+                <a href="/services.html">Services</a>
+
+                <a href="/machinery.html">Machinery</a>
+
+                <a href="/experience.html">Experience</a>
+
+                <a href="/contact.html">Contact</a>
+
+            </nav>
+
         </div>
 
-        <footer style="background:#111827;color:white;text-align:center;padding:20px;margin-top:50px;">
-            © 2026 Shree Yadunandan Enterprise | All Rights Reserved
-        </footer>
+    </header>
 
-        <script>
-            /* ===== MOBILE MENU TOGGLE ===== */
 
-            function toggleMenu(){
-                document.getElementById("navLinks").classList.toggle("show");
-            }
+    <!-- MAIN CONTENT -->
+    <main>
 
-            /* Auto close menu after click */
-            document.querySelectorAll('.nav-links a').forEach(link=>{
-                link.addEventListener("click",()=>{
-                    document.getElementById("navLinks").classList.remove("show");
-                });
-            });
-            
-            /* PAGE SWITCH */
-            function showPage(id,element){
-                document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-                document.getElementById(id).classList.add('active');
-                document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
-                element.classList.add('active');
-                window.scrollTo(0,0);
-            }
 
-            /* MACHINE DATA WITH DESCRIPTIONS */
-            let machineData = [
-                {name:"Sunny 215", model:2025, description:"Sunny 215 machine (2025 Model) equipped with a BTC Drilmax 810 Hydraulic Breaker."},
-                {name: "Tata Signa 2832.TK", model: 2026, description: "Tata Signa 2832.TK Dumper (2026 Model) equipped with a heavy-duty Hyva Hydraulic Tipping System and reinforced mining body."},
-                {name:"Hyundai 210", model:2024, description:"Hyundai 210 machine (2024 Model) equipped with a Indus Saga 200 Hydraulic Breaker."},
-                {name:"Hyundai 210", model:2023, description:"Hyundai 210 machine (2023 Model) equipped with a Rockstar Hydraulic Breaker."},
-                {name:"Hyundai 210", model:2018, description:"Hyundai 210 machine (2018 Model) equipped with a Rockstar Hydraulic Breaker."}
-            ];
+        <!-- HERO SECTION -->
+        <section class="hero">
 
-            let home = document.getElementById("home");
+            <div class="container">
 
-            machineData.forEach((machine,index)=>{
+                <span class="eyebrow">
+                    Infrastructure • Equipment • Experience
+                </span>
 
-                home.innerHTML += `
+                <h1>
+                    Building capability for India's infrastructure projects.
+                </h1>
 
-                <div class="machine-section">
+                <p>
+                    Shree Yadunandan Enterprise (SYE Infra) brings
+                    infrastructure-sector experience since 2004,
+                    with work across road, pipeline, drainage,
+                    mining and water canal projects.
+                </p>
 
-                    <h2>${machine.name}</h2>
+                <div class="actions">
 
-                    <div class="machine-model">
-                        Model: ${machine.model}
-                    </div>
+                    <a href="/contact.html" class="btn btn-primary">
+                        Discuss a Requirement ↗
+                    </a>
 
-                    <div class="machine-row">
+                    <a href="/machinery.html" class="btn btn-outline">
+                        Explore Machinery
+                    </a>
 
-                        <div>
-                            <div class="slider ${machine.name.includes('Tata') ? 'dumper-slider' : ''}" 
-                                id="machine${index}">
-                            </div>
-                        </div>
+                </div>
 
-                    </div>
+            </div>
 
-                    <p class="description">
-                        ${machine.description}
+        </section>
+
+
+
+        <!-- COMPANY HIGHLIGHTS -->
+        <section class="trust">
+
+            <div class="container trust-grid">
+
+                <div>
+                    <strong>2004</strong>
+                    <span>Working since</span>
+                </div>
+
+                <div>
+                    <strong>6 States</strong>
+                    <span>Reported work locations</span>
+                </div>
+
+                <div>
+                    <strong>5 Categories</strong>
+                    <span>Infrastructure work types</span>
+                </div>
+
+                <div>
+                    <strong>Jamnagar</strong>
+                    <span>Gujarat, India</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ABOUT PREVIEW -->
+        <section class="section">
+
+            <div class="container split">
+
+                <div>
+
+                    <span class="kicker">
+                        Who we are
+                    </span>
+
+                    <h2>
+                        Infrastructure experience and heavy equipment operations
+                    </h2>
+
+                    <p class="lead">
+                        SYE Infra is based in Jamnagar, Gujarat.
+                        Our experience includes infrastructure project
+                        work and the operation of excavators,
+                        hydraulic breakers and dumpers.
+                    </p>
+
+                    <ul class="checks">
+
+                        <li>
+                            Infrastructure-sector experience since 2004
+                        </li>
+
+                        <li>
+                            Road, pipeline and drainage work experience
+                        </li>
+
+                        <li>
+                            Mining and water canal project experience
+                        </li>
+
+                        <li>
+                            Heavy machinery and equipment capability
+                        </li>
+
+                    </ul>
+
+                    <a href="/about.html" class="btn btn-primary">
+                        Know Our Company
+                    </a>
+
+                </div>
+
+
+                <img
+                    src="/images/m1-2.jpg"
+                    alt="Excavator and hydraulic breaker equipment"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SERVICES -->
+        <section class="section soft">
+
+            <div class="container">
+
+                <div class="section-head center">
+
+                    <span class="kicker">
+                        What we do
+                    </span>
+
+                    <h2>
+                        Infrastructure work categories
+                    </h2>
+
+                    <p>
+                        Explore the areas represented in our company experience.
                     </p>
 
                 </div>
 
-                `;
 
-            });
-
-            /* SLIDER FUNCTION */
-            function createSlider(id, images){
-                let slider=document.getElementById(id);
-                images.forEach((src,i)=>{
-                let img=document.createElement("img");
-                img.src=src;
-                if(i===0) img.classList.add("active");
-                slider.appendChild(img);
-            });
-            let left=document.createElement("div"); left.className="arrow left"; left.innerHTML="❮";
-            let right=document.createElement("div"); right.className="arrow right"; right.innerHTML="❯";
-            slider.appendChild(left); slider.appendChild(right);
-            let index=0;
-            let imgs=slider.querySelectorAll("img");
-            function showSlide(i){ imgs.forEach(img=>img.classList.remove("active")); imgs[i].classList.add("active"); }
-            right.onclick=function(){ index=(index+1)%imgs.length; showSlide(index); };
-            left.onclick=function(){ index=(index-1+imgs.length)%imgs.length; showSlide(index); };
-            setInterval(()=>{ index=(index+1)%imgs.length; showSlide(index); },5000);
-            }
-
-            /* ADD MACHINE IMAGES */
-            /* SUNNY */
-            createSlider("machine0", [
-                "images/m1-1.jpg",
-                "images/m1-2.jpg",
-                "images/m1-3.jpg",
-                "images/m1-4.jpg"
-            ]);
+                <div class="grid three">
 
 
-            /* DUMPER ONLY */
-            createSlider("machine1", [
-                "images/d-1.jpg",
-                "images/d-2.jpg",
-                "images/d-3.jpg"
-            ]);
+                    <article class="card">
 
-            /* HYUNDAI 2024 */
-            createSlider("machine2", [
-                "images/m2-1.jpg",
-                "images/m2-2.jpg",
-                "images/m2-3.jpg",
-                "images/m2-4.jpg"
-            ]);
+                        <div class="card-body">
 
+                            <h3>Road Construction</h3>
 
-            /* HYUNDAI 2023 */
-            createSlider("machine3", [
-                "images/m3-1.jpg",
-                "images/m3-2.jpg",
-                "images/m3-3.jpg",
-                "images/m3-4.jpg"
-            ]);
+                            <p>
+                                Experience in road construction-related
+                                infrastructure work.
+                            </p>
 
+                        </div>
 
-            /* HYUNDAI 2018 */
-            createSlider("machine4", [
-                "images/m4-1.jpg",
-                "images/m4-2.jpg",
-                "images/m4-3.jpg",
-                "images/m4-4.jpg"
-            ]);
+                    </article>
 
 
 
-            /* ================= GALLERY IMAGES ================= */
+                    <article class="card">
 
-            let galleryImgs=[
-                "images/m1-1.jpg","images/m1-2.jpg",
-                "images/m1-3.jpg","images/m1-4.jpg",
-                "images/m2-1.jpg","images/m2-2.jpg",
-                "images/m2-3.jpg","images/m2-4.jpg",
-                "images/m3-2.jpg","images/m3-3.jpg",
-                "images/m3-4.jpg","images/d-1.jpg",
-                "images/d-2.jpg","images/d-3.jpg"
-            ];
+                        <div class="card-body">
 
-            let gallery=document.getElementById("gallery");
+                            <h3>Pipeline Projects</h3>
 
-            galleryImgs.forEach((src,index)=>{
-                let img=document.createElement("img");
-                img.src=src;
-                img.loading="lazy";
-                img.onclick=()=>openPopup(index);
-                gallery.appendChild(img);
-            });
+                            <p>
+                                Experience in pipeline infrastructure
+                                project work.
+                            </p>
 
-            /* ================= POPUP SLIDER ================= */
+                        </div>
 
-            let currentIndex=0;
+                    </article>
 
-            function openPopup(index){
-                currentIndex=index;
-                document.getElementById("popup").style.display="flex";
-                showPopupImage();
-            }
 
-            function closePopup(){
-                document.getElementById("popup").style.display="none";
-            }
 
-            function showPopupImage(){
-                document.getElementById("popupImg").src=galleryImgs[currentIndex];
-            }
+                    <article class="card">
 
-            function nextImage(){
-                currentIndex=(currentIndex+1)%galleryImgs.length;
-                showPopupImage();
-            }
+                        <div class="card-body">
 
-            function prevImage(){
-                currentIndex=(currentIndex-1+galleryImgs.length)%galleryImgs.length;
-                showPopupImage();
-            }
+                            <h3>Drainage Works</h3>
 
-            /* Arrow Buttons */
-            document.getElementById("popup").innerHTML += `
-                <div class="arrow left" onclick="prevImage()">❮</div>
-                <div class="arrow right" onclick="nextImage()">❯</div>
-            `;
+                            <p>
+                                Experience in gutter and drainage
+                                line works.
+                            </p>
 
-            /* Close when clicking background */
-            document.getElementById("popup").addEventListener("click",function(e){
-                if(e.target.id==="popup"){
-                    closePopup();
-                }
-            });
+                        </div>
 
-            /* Keyboard Support */
-            document.addEventListener("keydown",(e)=>{
-                if(document.getElementById("popup").style.display==="flex"){
-                    if(e.key==="ArrowRight") nextImage();
-                    if(e.key==="ArrowLeft") prevImage();
-                    if(e.key==="Escape") closePopup();
-                }
-            });
+                    </article>
 
-            /* Touch Swipe Support */
-            let startX=0;
 
-            document.getElementById("popup").addEventListener("touchstart",(e)=>{
-                startX=e.touches[0].clientX;
-            });
 
-            document.getElementById("popup").addEventListener("touchend",(e)=>{
-                let endX=e.changedTouches[0].clientX;
-                if(startX-endX>50) nextImage();
-                if(endX-startX>50) prevImage();
-            });
-        </script>
-    </body>
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>Mining Projects</h3>
+
+                            <p>
+                                Experience in mining-related
+                                project operations.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>Water Canal Projects</h3>
+
+                            <p>
+                                Experience in water canal project work.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="card">
+
+                        <div class="card-body">
+
+                            <h3>Heavy Machinery</h3>
+
+                            <p>
+                                Equipment includes excavators,
+                                hydraulic breakers and dumpers.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- MACHINERY HIGHLIGHTS -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <span class="kicker">
+                        Equipment highlights
+                    </span>
+
+                    <h2>
+                        Machinery in our fleet gallery
+                    </h2>
+
+                    <p>
+                        Selected equipment information and photographs
+                        shared by the company.
+                    </p>
+
+                </div>
+
+
+                <div class="grid three">
+
+
+                    <!-- Machine 1 -->
+                    <article class="card">
+
+                        <img
+                            src="/images/m1-1.jpg"
+                            alt="Sunny 215 excavator"
+                            loading="lazy"
+                        >
+
+                        <div class="card-body">
+
+                            <div class="meta">
+                                2025 MODEL
+                            </div>
+
+                            <h3>Sunny 215</h3>
+
+                            <p>
+                                BTC Drilmax 810 hydraulic breaker.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Machine 2 -->
+                    <article class="card">
+
+                        <img
+                            src="/images/d-1.jpg"
+                            alt="Tata Signa dumper"
+                            loading="lazy"
+                        >
+
+                        <div class="card-body">
+
+                            <div class="meta">
+                                2026 MODEL
+                            </div>
+
+                            <h3>Tata Signa 2832.TK</h3>
+
+                            <p>
+                                Hyva hydraulic tipping system.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Machine 3 -->
+                    <article class="card">
+
+                        <img
+                            src="/images/m2-1.jpg"
+                            alt="Hyundai 210 excavator"
+                            loading="lazy"
+                        >
+
+                        <div class="card-body">
+
+                            <div class="meta">
+                                2024 MODEL
+                            </div>
+
+                            <h3>Hyundai 210</h3>
+
+                            <p>
+                                Indus Saga 200 hydraulic breaker.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <p style="margin-top:22px">
+
+                    <a href="/machinery.html" class="btn btn-outline">
+                        View Machinery Details
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT CTA -->
+        <section class="section soft">
+
+            <div class="container cta">
+
+                <div>
+
+                    <h2>
+                        Have an infrastructure or equipment enquiry?
+                    </h2>
+
+                    <p>
+                        Contact our team to discuss your requirement.
+                    </p>
+
+                </div>
+
+
+                <a href="/contact.html" class="btn btn-primary">
+                    Contact SYE Infra ↗
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footgrid">
+
+
+                <div>
+
+                    <h3>Shree Yadunandan Enterprise</h3>
+
+                    <p>
+                        Infrastructure-sector experience and
+                        heavy machinery operations since 2004.
+                        Based in Jamnagar, Gujarat, India.
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>Explore</h3>
+
+                    <div class="links">
+
+                        <a href="/about.html">About Us</a>
+
+                        <a href="/services.html">Services</a>
+
+                        <a href="/machinery.html">Machinery</a>
+
+                        <a href="/experience.html">Experience</a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>Business Enquiries</h3>
+
+                    <div class="links">
+
+                        <a href="tel:+919737799755">
+                            +91 97377 99755
+                        </a>
+
+                        <a href="tel:+917990348678">
+                            +91 79903 48678
+                        </a>
+
+                        <a href="mailto:anil.suva01@gmail.com">
+                            anil.suva01@gmail.com
+                        </a>
+
+                        <a
+                            href="https://maps.app.goo.gl/2iMzkSXdpaFVbEL87"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Jamnagar, Gujarat
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                © <span data-year>2026</span>
+                Shree Yadunandan Enterprise.
+                All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a
+        class="whatsapp"
+        href="https://wa.me/917990348678"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        WhatsApp ↗
+    </a>
+
+
+</body>
 </html>
