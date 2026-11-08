@@ -1534,3 +1534,79 @@ a {
     transition: none;
   }
 }
+
+
+/* =========================================
+   EXPERIENCE - PROFESSIONAL HOVER EFFECT
+   ========================================= */
+
+.experience-section .stat,
+.experience-section .grid > .card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Orange top accent */
+.experience-section .stat::before,
+.experience-section .grid > .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e49b2f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.experience-section .stat:hover,
+.experience-section .grid > .card:hover {
+  transform: translateY(-7px);
+  border-color: #e49b2f;
+  box-shadow: 0 14px 32px rgba(16, 29, 50, 0.12);
+}
+
+/* Show orange accent */
+.experience-section .stat:hover::before,
+.experience-section .grid > .card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Smooth heading transition */
+.experience-section .stat strong,
+.experience-section .grid > .card h3 {
+  transition: color 0.3s ease;
+}
+
+.experience-section .stat:hover strong,
+.experience-section .grid > .card:hover h3 {
+  color: #d17d16;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .experience-section .stat:hover,
+  .experience-section .grid > .card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .experience-section .stat,
+  .experience-section .stat::before,
+  .experience-section .grid > .card,
+  .experience-section .grid > .card::before,
+  .experience-section .stat strong,
+  .experience-section .grid > .card h3 {
+    transition: none;
+  }
+}
