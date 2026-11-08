@@ -1167,3 +1167,196 @@ a {
     transition: none;
   }
 }
+
+
+/* =========================================
+   SYE INFRA - MACHINERY PROFESSIONAL SLIDER
+   ========================================= */
+
+/* Main slider container */
+
+.machinery-gallery {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #101d32;
+  border-radius: 12px 12px 0 0;
+  isolation: isolate;
+}
+
+/* Slides wrapper */
+
+.machinery-gallery-slides {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual images */
+
+.machinery-gallery-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1s ease-in-out,
+    visibility 1s ease-in-out;
+}
+
+.machinery-gallery-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Previous and Next arrows */
+
+.machinery-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 50%;
+  background: rgba(12, 25, 43, 0.72);
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.machinery-gallery-arrow:hover {
+  background: #d69a35;
+  color: #101d32;
+}
+
+.machinery-gallery-arrow:focus-visible,
+.machinery-gallery-dots button:focus-visible {
+  outline: 3px solid #d69a35;
+  outline-offset: 3px;
+}
+
+.machinery-gallery-arrow.prev {
+  left: 14px;
+}
+
+.machinery-gallery-arrow.next {
+  right: 14px;
+}
+
+/* Navigation dots */
+
+.machinery-gallery-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transform: translateX(-50%);
+  padding: 7px 12px;
+  border-radius: 30px;
+  background: rgba(12, 25, 43, 0.58);
+}
+
+.machinery-gallery-dots button {
+  width: 9px;
+  height: 9px;
+  min-width: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.65);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.machinery-gallery-dots button.is-active {
+  width: 23px;
+  border-radius: 10px;
+  background: #d69a35;
+}
+
+/* Card layout */
+
+.card .machinery-gallery + .card-body {
+  padding-top: 22px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .machinery-gallery {
+    height: 245px;
+  }
+
+  .machinery-gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .machinery-gallery {
+    height: 225px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .machinery-gallery-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .machinery-gallery-arrow.prev {
+    left: 9px;
+  }
+
+  .machinery-gallery-arrow.next {
+    right: 9px;
+  }
+
+  .machinery-gallery-dots {
+    bottom: 10px;
+    gap: 7px;
+  }
+
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .machinery-gallery-slide,
+  .machinery-gallery-arrow,
+  .machinery-gallery-dots button {
+    transition: none;
+  }
+
+}
