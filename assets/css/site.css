@@ -191,7 +191,7 @@ a {
       rgba(9, 19, 34, 0.94),
       rgba(9, 19, 34, 0.58)
     ),
-    url("/images/m1-1.jpg") center / cover;
+    url("/images/sany215-1.jpg") center / cover;
 
   color: white;
   padding: 92px 0;
@@ -724,7 +724,26 @@ a {
 
 }
 
+
 /* Hide top contact information bar */
 .topbar {
     display: none !important;
+}
+
+
+/* =========================================
+   AUTOMATIC IMAGE SLIDESHOW EFFECT
+   ========================================= */
+
+.auto-slideshow-image {
+    transition: opacity 0.5s ease-in-out !important;
+    will-change: opacity;
+}
+
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .auto-slideshow-image {
+        transition: none !important;
+    }
 }
