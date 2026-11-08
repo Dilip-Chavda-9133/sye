@@ -146,33 +146,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     image.classList.add("auto-slideshow-image");
 
-    image.style.transition = "opacity 0.5s ease-in-out";
+    image.style.transition = "opacity 1s ease-in-out";
 
     // Preload slideshow images
     slides.forEach(function (src) {
       const preload = new Image();
       preload.src = src;
     });
+    
+    
+    // Change image every 3 seconds with smooth fade
 
-    // Change image every 3 seconds
     window.setInterval(function () {
 
-      currentIndex = (currentIndex + 1) % slides.length;
+        const nextIndex = (currentIndex + 1) % slides.length;
+        const nextImage = new Image();
 
-      image.style.opacity = "0";
+        nextImage.onload = function () {
 
-      window.setTimeout(function () {
+            image.style.opacity = "0";
 
-        image.src = slides[currentIndex];
+            window.setTimeout(function () {
 
-        image.style.opacity = "1";
+                currentIndex = nextIndex;
+                image.src = slides[currentIndex];
 
-      }, 300);
+                requestAnimationFrame(function () {
+                    image.style.opacity = "1";
+                });
+
+            }, 500);
+
+        };
+
+        nextImage.onerror = function () {
+            console.warn("Slideshow image not found:", slides[nextIndex]);
+        };
+
+        nextImage.src = slides[nextIndex];
 
     }, 3000);
 
   });
-
 
 
   /* ---------- 5. EXTERNAL LINK SECURITY ---------- */

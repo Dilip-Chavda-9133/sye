@@ -731,17 +731,25 @@ a {
 }
 
 
-/* =========================================
-   AUTOMATIC IMAGE SLIDESHOW EFFECT
-   ========================================= */
-
-.auto-slideshow-image {
-    transition: opacity 0.5s ease-in-out !important;
-    will-change: opacity;
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .auto-slideshow-image {
+        transition: none !important;
+    }
 }
 
 
-/* Respect reduced-motion preference */
+/* =====================================
+   SMOOTH IMAGE SLIDESHOW TRANSITION
+   ===================================== */
+
+.auto-slideshow-image {
+    opacity: 1;
+    transition: opacity 1s ease-in-out !important;
+    will-change: opacity;
+}
+
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     .auto-slideshow-image {
         transition: none !important;
