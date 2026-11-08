@@ -134,42 +134,118 @@
     <!-- MAIN CONTENT -->
     <main>
 
-
         <!-- HERO SECTION -->
-        <section class="hero">
+        
+        <section class="hero hero-slider" data-hero-slider aria-label="Shree Yadunandan Enterprise machinery showcase">
 
-            <div class="container">
+            <!-- Background Slides -->
+            <div class="hero-slides" aria-hidden="true">
+
+                <img
+                class="hero-slide is-active"
+                src="/images/sany215-1.jpg"
+                alt=""
+                fetchpriority="high"
+                >
+
+                <img
+                class="hero-slide"
+                src="/images/hyundai210-1.jpg"
+                alt=""
+                loading="lazy"
+                >
+
+                <img
+                class="hero-slide"
+                src="/images/hyundai210-m2-1.jpg"
+                alt=""
+                loading="lazy"
+                >
+
+                <img
+                class="hero-slide"
+                src="/images/hyundai210-m3-1.jpg"
+                alt=""
+                loading="lazy"
+                >
+
+                <img
+                class="hero-slide"
+                src="/images/hayva1.jpg"
+                alt=""
+                loading="lazy"
+                >
+
+            </div>
+
+            <!-- Dark Overlay -->
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <!-- Hero Content -->
+            <div class="container hero-content">
 
                 <span class="eyebrow">
-                    Infrastructure • Equipment • Experience
+                INFRASTRUCTURE • HEAVY MACHINERY • EXPERIENCE
                 </span>
 
                 <h1>
-                    Building capability for India's infrastructure projects.
+                Building Capability for India's Infrastructure Projects.
                 </h1>
 
                 <p>
-                    Shree Yadunandan Enterprise (SYE Infra) brings
-                    infrastructure-sector experience since 2004,
-                    with work across road, pipeline, drainage,
-                    mining and water canal projects.
+                Shree Yadunandan Enterprise (SYE Infra) brings
+                infrastructure-sector experience since 2004,
+                with work across road, pipeline, drainage,
+                mining and water canal projects.
                 </p>
 
                 <div class="actions">
 
-                    <a href="/contact.html" class="btn btn-primary">
-                        Discuss a Requirement ↗
-                    </a>
+                <a href="/contact.html" class="btn btn-primary">
+                    Discuss a Requirement ↗
+                </a>
 
-                    <a href="/machinery.html" class="btn btn-outline">
-                        Explore Machinery
-                    </a>
+                <a href="/machinery.html" class="btn btn-outline hero-outline">
+                    Explore Machinery
+                </a>
 
                 </div>
 
             </div>
 
+            <!-- Slider Controls -->
+            <div class="hero-controls">
+
+                <button
+                class="hero-arrow hero-prev"
+                type="button"
+                aria-label="Previous slide"
+                >
+                &#10094;
+                </button>
+
+                <div class="hero-dots" aria-label="Choose slide">
+
+                <button class="hero-dot is-active" type="button" aria-label="Slide 1" aria-current="true"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 4"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 5"></button>
+
+                </div>
+
+                <button
+                class="hero-arrow hero-next"
+                type="button"
+                aria-label="Next slide"
+                >
+                &#10095;
+                </button>
+
+            </div>
+
         </section>
+
 
 
 
