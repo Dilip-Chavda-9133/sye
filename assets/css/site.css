@@ -1362,3 +1362,32 @@ a {
   }
 
 }
+
+/* FIX: Show complete machinery photos without cropping */
+
+.card .machinery-gallery-slide {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #101d32;
+}
+
+/* Keep the full image area visible */
+.machinery-gallery {
+  height: 320px;
+  background: #101d32;
+}
+
+@media (max-width: 768px) {
+  .machinery-gallery {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .machinery-gallery {
+    height: 250px;
+  }
+}
