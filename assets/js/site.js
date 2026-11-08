@@ -76,38 +76,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  
   /* ---------- 4. AUTOMATIC PHOTO SLIDESHOW ---------- */
 
   const photoGroups = {
-    "m1": [
+    "sany215": [
       "/images/sany215-1.jpg",
       "/images/sany215-2.jpg",
       "/images/sany215-3.jpg",
-      "/images/sany215.jpg"
+      "/images/sany215-4.jpg"
     ],
 
-    "m2": [
+    "hyundai210": [
       "/images/hyundai210-1.jpg",
       "/images/hyundai210-2.jpg",
       "/images/hyundai210-3.jpg",
       "/images/hyundai210-4.jpg"
     ],
 
-    "m3": [
+    "hyundai210-m2": [
       "/images/hyundai210-m2-1.jpg",
       "/images/hyundai210-m2-2.jpg",
       "/images/hyundai210-m2-3.jpg",
       "/images/hyundai210-m2-4.jpg"
     ],
 
-    "m4": [
+    "hyundai210-m3": [
       "/images/hyundai210-m3-1.jpg",
       "/images/hyundai210-m3-2.jpg",
       "/images/hyundai210-m3-3.jpg",
       "/images/hyundai210-m3-4.jpg"
     ],
 
-    "d": [
+    "hayva": [
       "/images/hayva1.jpg",
       "/images/hayva2.jpg",
       "/images/hayva3.jpg"
@@ -115,35 +116,45 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
 
+  // Start slideshow for matching images
+
   document.querySelectorAll("img").forEach(function (image) {
 
-    const imagePath = image.getAttribute("src") || "";
+    const originalSrc = image.getAttribute("src");
 
-    const match = imagePath.match(
-      /\/images\/(m[1-4]|d)-[1-4]\.jpg$/i
-    );
+    if (!originalSrc) return;
 
-    if (!match) {
+    let imagePath;
+
+    try {
+      imagePath = new URL(originalSrc, document.baseURI).pathname;
+    } catch (error) {
       return;
     }
 
-    const groupName = match[1].toLowerCase();
-    const slides = photoGroups[groupName];
+    const group = Object.entries(photoGroups).find(function ([name, slides]) {
+      return slides.includes(imagePath);
+    });
 
-    if (!slides || slides.length < 2) {
-      return;
-    }
+    if (!group) return;
+
+    const slides = group[1];
+
+    if (slides.length < 2) return;
 
     let currentIndex = slides.indexOf(imagePath);
-
-    if (currentIndex < 0) {
-      return;
-    }
 
     image.classList.add("auto-slideshow-image");
 
     image.style.transition = "opacity 0.5s ease-in-out";
 
+    // Preload slideshow images
+    slides.forEach(function (src) {
+      const preload = new Image();
+      preload.src = src;
+    });
+
+    // Change image every 3 seconds
     window.setInterval(function () {
 
       currentIndex = (currentIndex + 1) % slides.length;
@@ -154,17 +165,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         image.src = slides[currentIndex];
 
-        image.alt = groupName === "d"
-          ? "Dumper machinery photograph"
-          : "Heavy machinery photograph";
-
         image.style.opacity = "1";
 
-      }, 250);
+      }, 300);
 
     }, 3000);
 
   });
+
 
 
   /* ---------- 5. EXTERNAL LINK SECURITY ---------- */
