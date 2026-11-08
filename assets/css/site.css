@@ -1391,3 +1391,21 @@ a {
     height: 250px;
   }
 }
+
+/* Center the last service card when the number of cards is odd */
+
+.services-grid > .card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 490px;
+}
+
+/* Center the last machinery card */
+
+.machinery-grid > .card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 490px;
+}
