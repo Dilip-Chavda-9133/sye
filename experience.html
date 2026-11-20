@@ -2,82 +2,115 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101d32">
 
+  <!-- English SEO Metadata -->
+  <title>Infrastructure Project Experience Since 2004 | SYE Infra</title>
+
   <meta
     name="description"
-    content="Shree Yadunandan Enterprise infrastructure-sector experience since 2004 across six Indian states."
+    content="Explore Shree Yadunandan Enterprise's infrastructure project experience since 2004 across Gujarat, Rajasthan, Uttar Pradesh, Madhya Pradesh, Maharashtra and Kerala."
   >
 
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
 
-  <link
-    rel="canonical"
-    href="https://syeinfra.vercel.app/experience.html"
-  >
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://syeinfra.vercel.app/experience.html">
 
-  <link
-    rel="icon"
-    href="/images/logo.jpg"
-    type="image/jpeg"
-  >
+  <!-- Favicon -->
+  <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta
-    property="og:site_name"
-    content="Shree Yadunandan Enterprise"
-  >
-  <meta
-    property="og:title"
-    content="Our Experience | Infrastructure Projects | SYE Infra"
-  >
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="Shree Yadunandan Enterprise">
+  <meta property="og:title" content="Infrastructure Project Experience Since 2004 | SYE Infra">
   <meta
     property="og:description"
-    content="Shree Yadunandan Enterprise infrastructure-sector experience since 2004 across six Indian states."
+    content="Learn about SYE Infra's infrastructure-sector experience since 2004 across six Indian states."
   >
-  <meta
-    property="og:url"
-    content="https://syeinfra.vercel.app/experience.html"
-  >
-  <meta
-    property="og:image"
-    content="https://syeinfra.vercel.app/images/sany215-1.jpg"
-  >
+  <meta property="og:url" content="https://syeinfra.vercel.app/experience.html">
+  <meta property="og:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
+  <meta property="og:image:alt" content="Infrastructure construction machinery of SYE Infra">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Infrastructure Project Experience Since 2004 | SYE Infra">
+  <meta
+    name="twitter:description"
+    content="Shree Yadunandan Enterprise infrastructure project experience since 2004 across six Indian states."
+  >
+  <meta name="twitter:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
 
-  <title>Our Experience | Infrastructure Projects | SYE Infra</title>
-
+  <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/site.css">
 
+  <!-- Experience Page Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Shree Yadunandan Enterprise",
-    "alternateName": "SYE Infra",
-    "url": "https://syeinfra.vercel.app/",
-    "logo": "https://syeinfra.vercel.app/images/logo.jpg",
-    "foundingDate": "2004",
-    "email": "anil.suva01@gmail.com",
-    "telephone": [
-      "+91 97377 99755",
-      "+91 79903 48678"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Jamnagar",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://syeinfra.vercel.app/#organization",
+        "name": "Shree Yadunandan Enterprise",
+        "alternateName": "SYE Infra",
+        "url": "https://syeinfra.vercel.app/",
+        "logo": "https://syeinfra.vercel.app/images/logo.jpg",
+        "foundingDate": "2004",
+        "email": "anil.suva01@gmail.com",
+        "telephone": [
+          "+91 97377 99755",
+          "+91 79903 48678"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jamnagar",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://syeinfra.vercel.app/experience.html#webpage",
+        "url": "https://syeinfra.vercel.app/experience.html",
+        "name": "Infrastructure Project Experience Since 2004",
+        "description": "Shree Yadunandan Enterprise infrastructure-sector experience since 2004 across six Indian states.",
+        "inLanguage": "en-IN",
+        "about": {
+          "@id": "https://syeinfra.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://syeinfra.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Experience",
+            "item": "https://syeinfra.vercel.app/experience.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
+  <!-- Main JavaScript -->
   <script src="/assets/js/site.js" defer></script>
 </head>
+
 
 <body>
 
@@ -85,7 +118,9 @@
   <div class="topbar">
     <div class="container">
 
-      <span>Jamnagar, Gujarat, India</span>
+      <span data-i18n="location">
+        Jamnagar, Gujarat, India
+      </span>
 
       <a
         class="topbar-email"
@@ -115,7 +150,7 @@
 
         <span>
           <strong>SHREE YADUNANDAN ENTERPRISE</strong>
-          <small>
+          <small data-i18n="brandTagline">
             Infrastructure • Heavy Machinery • Equipment
           </small>
         </span>
@@ -124,6 +159,7 @@
 
       <button
         class="nav-toggle"
+        type="button"
         aria-label="Toggle navigation"
         aria-expanded="false"
       >
@@ -132,24 +168,38 @@
 
       <nav class="nav" aria-label="Main navigation">
 
-        <a href="/">Home</a>
+        <a href="/" data-i18n="navHome">Home</a>
 
-        <a href="/about.html">About Us</a>
+        <a href="/about.html" data-i18n="navAbout">About Us</a>
 
-        <a href="/services.html">Services</a>
+        <a href="/services.html" data-i18n="navServices">Services</a>
 
-        <a href="/machinery.html">Machinery</a>
+        <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
 
         <a
           href="/experience.html"
           aria-current="page"
+          data-i18n="navExperience"
         >
           Experience
         </a>
 
-        <a href="/contact.html">Contact</a>
+        <a href="/contact.html" data-i18n="navContact">Contact</a>
 
       </nav>
+
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <label for="languageSelect" data-i18n="languageLabel">
+          Language
+        </label>
+
+        <select id="languageSelect" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="gu">ગુજરાતી</option>
+        </select>
+      </div>
 
     </div>
 
@@ -163,12 +213,15 @@
       <div class="container">
 
         <div class="crumb">
-          <a href="/">Home</a> / Experience
+          <a href="/" data-i18n="navHome">Home</a>
+          / <span data-i18n="experienceBreadcrumb">Experience</span>
         </div>
 
-        <h1>Our Infrastructure Experience</h1>
+        <h1 data-i18n="experienceHeroTitle">
+          Our Infrastructure Experience
+        </h1>
 
-        <p>
+        <p data-i18n="experienceHeroDescription">
           Working since 2004, with project experience
           across six states in India.
         </p>
@@ -186,18 +239,24 @@
         <div class="stats">
 
           <div class="stat">
-            <strong>Since 2004</strong>
-            <span>Infrastructure-sector experience</span>
+            <strong data-i18n="experienceSince">Since 2004</strong>
+            <span data-i18n="experienceStat1">
+              Infrastructure-sector experience
+            </span>
           </div>
 
           <div class="stat">
-            <strong>6 States</strong>
-            <span>Reported work locations</span>
+            <strong data-i18n="experienceStates">6 States</strong>
+            <span data-i18n="experienceStat2">
+              Reported work locations
+            </span>
           </div>
 
           <div class="stat">
-            <strong>5 Categories</strong>
-            <span>Infrastructure project types</span>
+            <strong data-i18n="experienceCategories">5 Categories</strong>
+            <span data-i18n="experienceStat3">
+              Infrastructure project types
+            </span>
           </div>
 
         </div>
@@ -209,15 +268,17 @@
 
             <div class="card-body">
 
-              <h3>States We Have Worked In</h3>
+              <h3 data-i18n="experienceStatesTitle">
+                States We Have Worked In
+              </h3>
 
               <ul class="checks">
-                <li>Gujarat</li>
-                <li>Rajasthan</li>
-                <li>Uttar Pradesh</li>
-                <li>Madhya Pradesh</li>
-                <li>Maharashtra</li>
-                <li>Kerala</li>
+                <li data-i18n="stateGujarat">Gujarat</li>
+                <li data-i18n="stateRajasthan">Rajasthan</li>
+                <li data-i18n="stateUP">Uttar Pradesh</li>
+                <li data-i18n="stateMP">Madhya Pradesh</li>
+                <li data-i18n="stateMaharashtra">Maharashtra</li>
+                <li data-i18n="stateKerala">Kerala</li>
               </ul>
 
             </div>
@@ -228,14 +289,16 @@
 
             <div class="card-body">
 
-              <h3>Project Categories</h3>
+              <h3 data-i18n="experienceProjectTitle">
+                Project Categories
+              </h3>
 
               <ul class="checks">
-                <li>Pipeline Projects</li>
-                <li>Road Construction</li>
-                <li>Gutter / Drainage Line Works</li>
-                <li>Mining Projects</li>
-                <li>Water Canal Projects</li>
+                <li data-i18n="experiencePipeline">Pipeline Projects</li>
+                <li data-i18n="experienceRoad">Road Construction</li>
+                <li data-i18n="experienceDrainage">Gutter / Drainage Line Works</li>
+                <li data-i18n="experienceMining">Mining Projects</li>
+                <li data-i18n="experienceCanal">Water Canal Projects</li>
               </ul>
 
             </div>
@@ -250,11 +313,15 @@
           style="margin-top:40px"
         >
 
-          <span class="kicker">Business relationships</span>
+          <span class="kicker" data-i18n="businessRelationships">
+            Business relationships
+          </span>
 
-          <h2>Companies Named in Our Work History</h2>
+          <h2 data-i18n="experienceCompaniesTitle">
+            Companies Named in Our Work History
+          </h2>
 
-          <p>
+          <p data-i18n="experienceCompaniesDescription">
             Names listed based on information supplied for this
             website. No endorsement or current affiliation is implied.
           </p>
@@ -265,32 +332,32 @@
 
           <div class="stat">
             <strong>L&T (Larsen & Toubro)</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
           <div class="stat">
             <strong>Megha Engineering</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
           <div class="stat">
             <strong>GMDC</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
           <div class="stat">
             <strong>AEC</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
           <div class="stat">
             <strong>Mantena</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
           <div class="stat">
             <strong>JR Infra</strong>
-            <span>Company reference</span>
+            <span data-i18n="companyReference">Company reference</span>
           </div>
 
         </div>
@@ -299,6 +366,7 @@
         <div
           class="notice"
           style="margin-top:25px"
+          data-i18n="experienceNotice"
         >
           For a stronger project portfolio, add verified project
           names, dates, locations, scope details and client-approved
@@ -323,9 +391,11 @@
 
         <div>
 
-          <h3>Shree Yadunandan Enterprise</h3>
+          <h3 data-i18n="footerCompany">
+            Shree Yadunandan Enterprise
+          </h3>
 
-          <p>
+          <p data-i18n="footerDescription">
             Infrastructure-sector experience and heavy machinery
             operations since 2004. Based in Jamnagar, Gujarat, India.
           </p>
@@ -334,17 +404,17 @@
 
         <div>
 
-          <h3>Explore</h3>
+          <h3 data-i18n="footerExplore">Explore</h3>
 
           <div class="links">
 
-            <a href="/about.html">About Us</a>
+            <a href="/about.html" data-i18n="navAbout">About Us</a>
 
-            <a href="/services.html">Services</a>
+            <a href="/services.html" data-i18n="navServices">Services</a>
 
-            <a href="/machinery.html">Machinery</a>
+            <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
 
-            <a href="/experience.html">Experience</a>
+            <a href="/experience.html" data-i18n="navExperience">Experience</a>
 
           </div>
 
@@ -352,7 +422,7 @@
 
         <div>
 
-          <h3>Business Enquiries</h3>
+          <h3 data-i18n="footerEnquiries">Business Enquiries</h3>
 
           <div class="links">
 
@@ -372,6 +442,7 @@
               href="https://maps.app.goo.gl/2iMzkSXdpaFVbEL87"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="footerLocation"
             >
               Jamnagar, Gujarat
             </a>
@@ -385,7 +456,9 @@
       <div class="copyright">
 
         © <span data-year>2026</span>
-        Shree Yadunandan Enterprise. All rights reserved.
+        <span data-i18n="copyright">
+          Shree Yadunandan Enterprise. All rights reserved.
+        </span>
 
       </div>
 
@@ -399,6 +472,7 @@
     href="https://wa.me/917990348678"
     target="_blank"
     rel="noopener noreferrer"
+    data-i18n="whatsapp"
   >
     WhatsApp ↗
   </a>

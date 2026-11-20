@@ -1,63 +1,100 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="theme-color" content="#101d32">
 
-    <meta name="description" content="Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat, has worked in infrastructure projects and heavy machinery operations since 2004.">
+    <!-- English SEO: Search Engine Metadata -->
+    <title>Shree Yadunandan Enterprise | SYE Infra, Jamnagar</title>
 
-    <meta name="robots" content="index, follow">
+    <meta
+        name="description"
+        content="Shree Yadunandan Enterprise, sye Infra, syeinfra, Road construction, pipeline, drainage, mining and water canal works by Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat, India. Since 2004."
+    >
 
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL: English main page -->
     <link rel="canonical" href="https://syeinfra.vercel.app/">
 
+    <!-- Favicon -->
     <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
 
-    <!-- Open Graph SEO -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="Shree Yadunandan Enterprise">
     <meta property="og:title" content="Shree Yadunandan Enterprise | SYE Infra, Jamnagar">
-    <meta property="og:description" content="Infrastructure projects and heavy machinery operations since 2004.">
+    <meta
+        property="og:description"
+        content="Road construction, pipeline, drainage, mining and water canal works by SYE Infra in Jamnagar, Gujarat. Infrastructure experience since 2004."
+    >
     <meta property="og:url" content="https://syeinfra.vercel.app/">
     <meta property="og:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
+    <meta property="og:image:alt" content="Heavy construction machinery of Shree Yadunandan Enterprise">
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-
-    <title>Shree Yadunandan Enterprise | SYE Infra, Jamnagar</title>
+    <meta name="twitter:title" content="Shree Yadunandan Enterprise | SYE Infra, Jamnagar">
+    <meta
+        name="twitter:description"
+        content="Infrastructure projects and heavy machinery operations by SYE Infra, Jamnagar, Gujarat. Experience since 2004."
+    >
+    <meta name="twitter:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="/assets/css/site.css">
 
-    <!-- Organization Schema -->
+    <!-- Organization and Website Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Shree Yadunandan Enterprise",
-        "alternateName": "SYE Infra",
-        "url": "https://syeinfra.vercel.app/",
-        "logo": "https://syeinfra.vercel.app/images/logo.jpg",
-        "foundingDate": "2004",
-        "email": "anil.suva01@gmail.com",
-        "telephone": [
-            "+91 97377 99755",
-            "+91 79903 48678"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jamnagar",
-            "addressRegion": "Gujarat",
-            "addressCountry": "IN"
-        }
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://syeinfra.vercel.app/#organization",
+                "name": "Shree Yadunandan Enterprise",
+                "alternateName": "SYE Infra",
+                "url": "https://syeinfra.vercel.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://syeinfra.vercel.app/images/logo.jpg"
+                },
+                "foundingDate": "2004",
+                "email": "anil.suva01@gmail.com",
+                "telephone": [
+                    "+91 97377 99755",
+                    "+91 79903 48678"
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Jamnagar",
+                    "addressRegion": "Gujarat",
+                    "addressCountry": "IN"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://syeinfra.vercel.app/#website",
+                "url": "https://syeinfra.vercel.app/",
+                "name": "Shree Yadunandan Enterprise | SYE Infra",
+                "publisher": {
+                    "@id": "https://syeinfra.vercel.app/#organization"
+                },
+                "inLanguage": "en-IN"
+            }
+        ]
     }
     </script>
 
     <!-- Main JavaScript -->
     <script src="/assets/js/site.js" defer></script>
-
 </head>
+
 
 <body>
 
@@ -65,7 +102,7 @@
     <div class="topbar">
         <div class="container">
 
-            <span>Jamnagar, Gujarat, India</span>
+            <span data-i18n="location">Jamnagar, Gujarat, India</span>
 
             <a class="topbar-email" href="mailto:anil.suva01@gmail.com">
                 anil.suva01@gmail.com
@@ -90,7 +127,7 @@
                 <span>
                     <strong>SHREE YADUNANDAN ENTERPRISE</strong>
 
-                    <small>
+                    <small data-i18n="brandTagline">
                         Infrastructure • Heavy Machinery • Equipment
                     </small>
                 </span>
@@ -112,19 +149,33 @@
             <!-- Navigation -->
             <nav class="nav" aria-label="Main navigation">
 
-                <a href="/" aria-current="page">Home</a>
+                <a href="/" aria-current="page" data-i18n="navHome">Home</a>
 
-                <a href="/about.html">About Us</a>
+                <a href="/about.html" data-i18n="navAbout">About Us</a>
 
-                <a href="/services.html">Services</a>
+                <a href="/services.html" data-i18n="navServices">Services</a>
 
-                <a href="/machinery.html">Machinery</a>
+                <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
 
-                <a href="/experience.html">Experience</a>
+                <a href="/experience.html" data-i18n="navExperience">Experience</a>
 
-                <a href="/contact.html">Contact</a>
+                <a href="/contact.html" data-i18n="navContact">Contact</a>
 
             </nav>
+
+
+            <!-- LANGUAGE SELECTOR -->
+            <div class="language-selector">
+                <label for="languageSelect" data-i18n="languageLabel">
+                    Language
+                </label>
+
+                <select id="languageSelect" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+            </div>
 
         </div>
 
@@ -135,134 +186,146 @@
     <main>
 
         <!-- HERO SECTION -->
-        
-        <section class="hero hero-slider" data-hero-slider aria-label="Shree Yadunandan Enterprise machinery showcase">
+        <section
+            class="hero hero-slider"
+            data-hero-slider
+            aria-label="Shree Yadunandan Enterprise machinery showcase"
+        >
 
             <!-- Background Slides -->
             <div class="hero-slides" aria-hidden="true">
 
                 <img
-                class="hero-slide is-active"
-                src="/images/sany215-1.jpg"
-                alt=""
-                fetchpriority="high"
+                    class="hero-slide is-active"
+                    src="/images/sany215-1.jpg"
+                    alt=""
+                    fetchpriority="high"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hyundai210-1.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hyundai210-1.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hyundai210-m2-1.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hyundai210-m2-1.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hyundai210-m2-5.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hyundai210-m2-5.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hayva1.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hayva1.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hayva2.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hayva2.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
                 <img
-                class="hero-slide"
-                src="/images/hayva3.jpg"
-                alt=""
-                loading="lazy"
+                    class="hero-slide"
+                    src="/images/hayva3.jpg"
+                    alt=""
+                    loading="lazy"
                 >
 
             </div>
+
 
             <!-- Dark Overlay -->
             <div class="hero-overlay" aria-hidden="true"></div>
 
+
             <!-- Hero Content -->
             <div class="container hero-content">
 
-                <span class="eyebrow">
-                INFRASTRUCTURE • HEAVY MACHINERY • EXPERIENCE
+                <span class="eyebrow" data-i18n="heroEyebrow">
+                    INFRASTRUCTURE • HEAVY MACHINERY • EXPERIENCE
                 </span>
 
-                <h1>
-                Building Capability for India's Infrastructure Projects.
+                <h1 data-i18n="heroTitle">
+                    Building Capability for India's Infrastructure Projects.
                 </h1>
 
-                <p>
-                Shree Yadunandan Enterprise (SYE Infra) brings
-                infrastructure-sector experience since 2004,
-                with work across road, pipeline, drainage,
-                mining and water canal projects.
+                <p data-i18n="heroDescription">
+                    Shree Yadunandan Enterprise (SYE Infra) brings
+                    infrastructure-sector experience since 2004,
+                    with work across road, pipeline, drainage,
+                    mining and water canal projects.
                 </p>
 
                 <div class="actions">
 
-                <a href="/contact.html" class="btn btn-primary">
-                    Discuss a Requirement ↗
-                </a>
+                    <a
+                        href="/contact.html"
+                        class="btn btn-primary"
+                        data-i18n="heroButton1"
+                    >
+                        Discuss a Requirement ↗
+                    </a>
 
-                <a href="/machinery.html" class="btn btn-outline hero-outline">
-                    Explore Machinery
-                </a>
+                    <a
+                        href="/machinery.html"
+                        class="btn btn-outline hero-outline"
+                        data-i18n="heroButton2"
+                    >
+                        Explore Machinery
+                    </a>
 
                 </div>
 
             </div>
+
 
             <!-- Slider Controls -->
             <div class="hero-controls">
 
                 <button
-                class="hero-arrow hero-prev"
-                type="button"
-                aria-label="Previous slide"
+                    class="hero-arrow hero-prev"
+                    type="button"
+                    aria-label="Previous slide"
                 >
-                &#10094;
+                    &#10094;
                 </button>
 
                 <div class="hero-dots" aria-label="Choose slide">
 
-                <button class="hero-dot is-active" type="button" aria-label="Slide 1" aria-current="true"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 2"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 3"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 4"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 5"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 6"></button>
-                <button class="hero-dot" type="button" aria-label="Slide 7"></button>
+                    <button class="hero-dot is-active" type="button" aria-label="Slide 1" aria-current="true"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 4"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 5"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 6"></button>
+                    <button class="hero-dot" type="button" aria-label="Slide 7"></button>
 
                 </div>
 
                 <button
-                class="hero-arrow hero-next"
-                type="button"
-                aria-label="Next slide"
+                    class="hero-arrow hero-next"
+                    type="button"
+                    aria-label="Next slide"
                 >
-                &#10095;
+                    &#10095;
                 </button>
 
             </div>
 
         </section>
-
-
 
 
         <!-- COMPANY HIGHLIGHTS -->
@@ -272,28 +335,27 @@
 
                 <div>
                     <strong>2004</strong>
-                    <span>Working since</span>
+                    <span data-i18n="trustSince">Working since</span>
                 </div>
 
                 <div>
                     <strong>6 States</strong>
-                    <span>Reported work locations</span>
+                    <span data-i18n="trustStates">Reported work locations</span>
                 </div>
 
                 <div>
                     <strong>5 Categories</strong>
-                    <span>Infrastructure work types</span>
+                    <span data-i18n="trustCategories">Infrastructure work types</span>
                 </div>
 
                 <div>
                     <strong>Jamnagar</strong>
-                    <span>Gujarat, India</span>
+                    <span data-i18n="trustLocation">Gujarat, India</span>
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- ABOUT PREVIEW -->
@@ -303,15 +365,15 @@
 
                 <div>
 
-                    <span class="kicker">
+                    <span class="kicker" data-i18n="aboutKicker">
                         Who we are
                     </span>
 
-                    <h2>
+                    <h2 data-i18n="aboutTitle">
                         Infrastructure experience and heavy equipment operations
                     </h2>
 
-                    <p class="lead">
+                    <p class="lead" data-i18n="aboutDescription">
                         SYE Infra is based in Jamnagar, Gujarat.
                         Our experience includes infrastructure project
                         work and the operation of excavators,
@@ -320,25 +382,29 @@
 
                     <ul class="checks">
 
-                        <li>
+                        <li data-i18n="aboutPoint1">
                             Infrastructure-sector experience since 2004
                         </li>
 
-                        <li>
+                        <li data-i18n="aboutPoint2">
                             Road, pipeline and drainage work experience
                         </li>
 
-                        <li>
+                        <li data-i18n="aboutPoint3">
                             Mining and water canal project experience
                         </li>
 
-                        <li>
+                        <li data-i18n="aboutPoint4">
                             Heavy machinery and equipment capability
                         </li>
 
                     </ul>
 
-                    <a href="/about.html" class="btn btn-primary">
+                    <a
+                        href="/about.html"
+                        class="btn btn-primary"
+                        data-i18n="aboutButton"
+                    >
                         Know Our Company
                     </a>
 
@@ -356,7 +422,6 @@
         </section>
 
 
-
         <!-- SERVICES -->
         <section class="section soft">
 
@@ -364,15 +429,15 @@
 
                 <div class="section-head center">
 
-                    <span class="kicker">
+                    <span class="kicker" data-i18n="servicesKicker">
                         What we do
                     </span>
 
-                    <h2>
+                    <h2 data-i18n="servicesTitle">
                         Infrastructure work categories
                     </h2>
 
-                    <p>
+                    <p data-i18n="servicesDescription">
                         Explore the areas represented in our company experience.
                     </p>
 
@@ -381,113 +446,70 @@
 
                 <div class="grid three">
 
-
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Road Construction</h3>
-
-                            <p>
-                                Experience in road construction-related
-                                infrastructure work.
+                            <h3 data-i18n="serviceRoadTitle">Road Construction</h3>
+                            <p data-i18n="serviceRoadDescription">
+                                Experience in road construction-related infrastructure work.
                             </p>
-
                         </div>
-
                     </article>
 
 
-
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Pipeline Projects</h3>
-
-                            <p>
-                                Experience in pipeline infrastructure
-                                project work.
+                            <h3 data-i18n="servicePipelineTitle">Pipeline Projects</h3>
+                            <p data-i18n="servicePipelineDescription">
+                                Experience in pipeline infrastructure project work.
                             </p>
-
                         </div>
-
                     </article>
 
 
-
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Drainage Works</h3>
-
-                            <p>
-                                Experience in gutter and drainage
-                                line works.
+                            <h3 data-i18n="serviceDrainageTitle">Drainage Works</h3>
+                            <p data-i18n="serviceDrainageDescription">
+                                Experience in gutter and drainage line works.
                             </p>
-
                         </div>
-
                     </article>
 
 
-
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Mining Projects</h3>
-
-                            <p>
-                                Experience in mining-related
-                                project operations.
+                            <h3 data-i18n="serviceMiningTitle">Mining Projects</h3>
+                            <p data-i18n="serviceMiningDescription">
+                                Experience in mining-related project operations.
                             </p>
-
                         </div>
-
                     </article>
 
 
-
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Water Canal Projects</h3>
-
-                            <p>
+                            <h3 data-i18n="serviceCanalTitle">Water Canal Projects</h3>
+                            <p data-i18n="serviceCanalDescription">
                                 Experience in water canal project work.
                             </p>
-
                         </div>
-
                     </article>
-
 
 
                     <article class="card">
-
                         <div class="card-body">
-
-                            <h3>Heavy Machinery</h3>
-
-                            <p>
-                                Equipment includes excavators,
-                                hydraulic breakers and dumpers.
+                            <h3 data-i18n="serviceMachineryTitle">Heavy Machinery</h3>
+                            <p data-i18n="serviceMachineryDescription">
+                                Equipment includes excavators, hydraulic breakers and dumpers.
                             </p>
-
                         </div>
-
                     </article>
-
 
                 </div>
 
             </div>
 
         </section>
-
 
 
         <!-- MACHINERY HIGHLIGHTS -->
@@ -497,17 +519,16 @@
 
                 <div class="section-head">
 
-                    <span class="kicker">
+                    <span class="kicker" data-i18n="machineryKicker">
                         Equipment highlights
                     </span>
 
-                    <h2>
+                    <h2 data-i18n="machineryTitle">
                         Machinery in our fleet gallery
                     </h2>
 
-                    <p>
-                        Selected equipment information and photographs
-                        shared by the company.
+                    <p data-i18n="machineryDescription">
+                        Selected equipment information and photographs shared by the company.
                     </p>
 
                 </div>
@@ -515,32 +536,28 @@
 
                 <div class="grid three">
 
-
                     <!-- Machine 1 -->
                     <article class="card">
 
                         <img
                             src="/images/sany215-1.jpg"
-                            alt="Suny 215 excavator"
+                            alt="Sany 215 excavator"
                             loading="lazy"
                         >
 
                         <div class="card-body">
 
-                            <div class="meta">
-                                2025 MODEL
-                            </div>
+                            <div class="meta">2025 MODEL</div>
 
-                            <h3>Suny 215</h3>
+                            <h3>Sany 215</h3>
 
-                            <p>
+                            <p data-i18n="machine1Description">
                                 BTC Drilmax 810 hydraulic breaker.
                             </p>
 
                         </div>
 
                     </article>
-
 
 
                     <!-- Machine 2 -->
@@ -554,20 +571,17 @@
 
                         <div class="card-body">
 
-                            <div class="meta">
-                                2026 MODEL
-                            </div>
+                            <div class="meta">2026 MODEL</div>
 
                             <h3>Tata Signa 2832.TK</h3>
 
-                            <p>
+                            <p data-i18n="machine2Description">
                                 Hyva hydraulic tipping system.
                             </p>
 
                         </div>
 
                     </article>
-
 
 
                     <!-- Machine 3 -->
@@ -581,13 +595,11 @@
 
                         <div class="card-body">
 
-                            <div class="meta">
-                                2024 MODEL
-                            </div>
+                            <div class="meta">2024 MODEL</div>
 
                             <h3>Hyundai 210</h3>
 
-                            <p>
+                            <p data-i18n="machine3Description">
                                 Indus Saga 200 hydraulic breaker.
                             </p>
 
@@ -595,13 +607,16 @@
 
                     </article>
 
-
                 </div>
 
 
                 <p style="margin-top:22px">
 
-                    <a href="/machinery.html" class="btn btn-outline">
+                    <a
+                        href="/machinery.html"
+                        class="btn btn-outline"
+                        data-i18n="machineryButton"
+                    >
                         View Machinery Details
                     </a>
 
@@ -612,7 +627,6 @@
         </section>
 
 
-
         <!-- CONTACT CTA -->
         <section class="section soft">
 
@@ -620,18 +634,22 @@
 
                 <div>
 
-                    <h2>
+                    <h2 data-i18n="ctaTitle">
                         Have an infrastructure or equipment enquiry?
                     </h2>
 
-                    <p>
+                    <p data-i18n="ctaDescription">
                         Contact our team to discuss your requirement.
                     </p>
 
                 </div>
 
 
-                <a href="/contact.html" class="btn btn-primary">
+                <a
+                    href="/contact.html"
+                    class="btn btn-primary"
+                    data-i18n="ctaButton"
+                >
                     Contact SYE Infra ↗
                 </a>
 
@@ -639,9 +657,7 @@
 
         </section>
 
-
     </main>
-
 
 
     <!-- FOOTER -->
@@ -651,12 +667,11 @@
 
             <div class="footgrid">
 
-
                 <div>
 
                     <h3>Shree Yadunandan Enterprise</h3>
 
-                    <p>
+                    <p data-i18n="footerDescription">
                         Infrastructure-sector experience and
                         heavy machinery operations since 2004.
                         Based in Jamnagar, Gujarat, India.
@@ -665,30 +680,28 @@
                 </div>
 
 
-
                 <div>
 
-                    <h3>Explore</h3>
+                    <h3 data-i18n="footerExplore">Explore</h3>
 
                     <div class="links">
 
-                        <a href="/about.html">About Us</a>
+                        <a href="/about.html" data-i18n="navAbout">About Us</a>
 
-                        <a href="/services.html">Services</a>
+                        <a href="/services.html" data-i18n="navServices">Services</a>
 
-                        <a href="/machinery.html">Machinery</a>
+                        <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
 
-                        <a href="/experience.html">Experience</a>
+                        <a href="/experience.html" data-i18n="navExperience">Experience</a>
 
                     </div>
 
                 </div>
 
 
-
                 <div>
 
-                    <h3>Business Enquiries</h3>
+                    <h3 data-i18n="footerEnquiries">Business Enquiries</h3>
 
                     <div class="links">
 
@@ -709,13 +722,12 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Jamnagar, Gujarat
+                            <span data-i18n="footerLocation">Jamnagar, Gujarat</span>
                         </a>
 
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -724,7 +736,7 @@
 
                 © <span data-year>2026</span>
                 Shree Yadunandan Enterprise.
-                All rights reserved.
+                <span data-i18n="copyright">All rights reserved.</span>
 
             </div>
 
@@ -733,13 +745,13 @@
     </footer>
 
 
-
     <!-- FLOATING WHATSAPP BUTTON -->
     <a
         class="whatsapp"
         href="https://wa.me/917990348678"
         target="_blank"
         rel="noopener noreferrer"
+        data-i18n="whatsapp"
     >
         WhatsApp ↗
     </a>

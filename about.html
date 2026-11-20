@@ -1,74 +1,125 @@
 
 <!doctype html>
 <html lang="en">
+
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101d32">
 
-  <meta name="description" content="Learn about Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat, and working in infrastructure since 2004.">
+  <!-- English SEO Metadata -->
+  <title>About Shree Yadunandan Enterprise | SYE Infra</title>
 
-  <meta name="robots" content="index,follow">
+  <meta
+    name="description"
+    content="Learn about Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat. Explore our infrastructure project experience since 2004 across six Indian states."
+  >
 
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://syeinfra.vercel.app/about.html">
+
+  <!-- Favicon -->
   <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="Shree Yadunandan Enterprise">
-  <meta property="og:title" content="About Us | Shree Yadunandan Enterprise">
-  <meta property="og:description" content="Learn about Shree Yadunandan Enterprise (SYE Infra), based in Jamnagar, Gujarat, and working in infrastructure since 2004.">
+  <meta property="og:title" content="About Shree Yadunandan Enterprise | SYE Infra">
+  <meta
+    property="og:description"
+    content="Learn about SYE Infra, based in Jamnagar, Gujarat, with infrastructure-sector experience since 2004."
+  >
   <meta property="og:url" content="https://syeinfra.vercel.app/about.html">
   <meta property="og:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
+  <meta property="og:image:alt" content="Construction machinery used by Shree Yadunandan Enterprise">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Shree Yadunandan Enterprise | SYE Infra">
+  <meta
+    name="twitter:description"
+    content="Discover the company, infrastructure experience and equipment of Shree Yadunandan Enterprise, Jamnagar, Gujarat."
+  >
+  <meta name="twitter:image" content="https://syeinfra.vercel.app/images/sany215-1.jpg">
 
-  <title>About Us | Shree Yadunandan Enterprise</title>
-
+  <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/site.css">
 
+  <!-- Organization and About Page Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Shree Yadunandan Enterprise",
-    "alternateName": "SYE Infra",
-    "url": "https://syeinfra.vercel.app/",
-    "logo": "https://syeinfra.vercel.app/images/logo.jpg",
-    "foundingDate": "2004",
-    "email": "anil.suva01@gmail.com",
-    "telephone": [
-      "+91 97377 99755",
-      "+91 79903 48678"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Jamnagar",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://syeinfra.vercel.app/#organization",
+        "name": "Shree Yadunandan Enterprise",
+        "alternateName": "SYE Infra",
+        "url": "https://syeinfra.vercel.app/",
+        "logo": "https://syeinfra.vercel.app/images/logo.jpg",
+        "foundingDate": "2004",
+        "email": "anil.suva01@gmail.com",
+        "telephone": [
+          "+91 97377 99755",
+          "+91 79903 48678"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jamnagar",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://syeinfra.vercel.app/about.html#webpage",
+        "url": "https://syeinfra.vercel.app/about.html",
+        "name": "About Shree Yadunandan Enterprise",
+        "description": "Learn about Shree Yadunandan Enterprise and its infrastructure-sector experience since 2004.",
+        "inLanguage": "en-IN",
+        "mainEntity": {
+          "@id": "https://syeinfra.vercel.app/#organization"
+        }
+      }
+    ]
   }
   </script>
 
+  <!-- Main JavaScript -->
   <script src="/assets/js/site.js" defer></script>
 </head>
 
+
 <body>
 
-  <!-- Top Contact Bar -->
+  <!-- TOP CONTACT BAR -->
   <div class="topbar">
     <div class="container">
-      <span>Jamnagar, Gujarat, India</span>
+
+      <span data-i18n="location">
+        Jamnagar, Gujarat, India
+      </span>
+
       <a class="topbar-email" href="mailto:anil.suva01@gmail.com">
         anil.suva01@gmail.com
       </a>
+
     </div>
   </div>
 
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header class="site-header">
+
     <div class="container header-inner">
 
       <a class="brand" href="/" aria-label="SYE Infra home">
+
         <img
           src="/images/logo.jpg"
           alt="Shree Yadunandan Enterprise logo"
@@ -76,166 +127,276 @@
 
         <span>
           <strong>SHREE YADUNANDAN ENTERPRISE</strong>
-          <small>Infrastructure • Heavy Machinery • Equipment</small>
+
+          <small data-i18n="brandTagline">
+            Infrastructure • Heavy Machinery • Equipment
+          </small>
         </span>
+
       </a>
+
 
       <button
         class="nav-toggle"
+        type="button"
         aria-label="Toggle navigation"
         aria-expanded="false"
       >
         ☰
       </button>
 
+
+      <!-- NAVIGATION -->
       <nav class="nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/about.html" aria-current="page">About Us</a>
-        <a href="/services.html">Services</a>
-        <a href="/machinery.html">Machinery</a>
-        <a href="/experience.html">Experience</a>
-        <a href="/contact.html">Contact</a>
+
+        <a href="/" data-i18n="navHome">Home</a>
+
+        <a
+          href="/about.html"
+          aria-current="page"
+          data-i18n="navAbout"
+        >About Us</a>
+
+        <a href="/services.html" data-i18n="navServices">Services</a>
+
+        <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
+
+        <a href="/experience.html" data-i18n="navExperience">Experience</a>
+
+        <a href="/contact.html" data-i18n="navContact">Contact</a>
+
       </nav>
 
+
+      <!-- LANGUAGE SELECTOR -->
+      <div class="language-selector">
+
+        <label for="languageSelect" data-i18n="languageLabel">
+          Language
+        </label>
+
+        <select id="languageSelect" aria-label="Select language">
+
+          <option value="en">English</option>
+
+          <option value="hi">हिन्दी</option>
+
+          <option value="gu">ગુજરાતી</option>
+
+        </select>
+
+      </div>
+
     </div>
+
   </header>
+
 
   <main>
 
-    <!-- Page Hero -->
+    <!-- PAGE HERO -->
     <section class="page-hero">
+
       <div class="container">
 
         <div class="crumb">
-          <a href="/">Home</a> / About Us
+
+          <a href="/" data-i18n="navHome">Home</a>
+
+          / <span data-i18n="aboutBreadcrumb">About Us</span>
+
         </div>
 
-        <h1>About Shree Yadunandan Enterprise</h1>
+        <h1 data-i18n="aboutHeroTitle">
+          About Shree Yadunandan Enterprise
+        </h1>
 
-        <p>
+        <p data-i18n="aboutHeroDescription">
           Infrastructure-sector experience and heavy machinery
           operations since 2004.
         </p>
 
       </div>
+
     </section>
 
-    <!-- Company Introduction -->
+
+    <!-- COMPANY INTRODUCTION -->
     <section class="section">
+
       <div class="container split">
 
         <div>
-          <span class="kicker">Our company</span>
 
-          <h2>Working in infrastructure since 2004</h2>
+          <span class="kicker" data-i18n="aboutCompanyKicker">
+            Our company
+          </span>
 
-          <p class="lead">
+          <h2 data-i18n="aboutCompanyTitle">
+            Working in infrastructure since 2004
+          </h2>
+
+          <p class="lead" data-i18n="aboutCompanyLead">
             Shree Yadunandan Enterprise, also known as SYE Infra,
             is based in Jamnagar, Gujarat, India.
           </p>
 
-          <p>
+          <p data-i18n="aboutCompanyParagraph1">
             Our experience covers road construction, pipeline projects,
             drainage line works, mining projects and water canal
             projects across Gujarat, Rajasthan, Uttar Pradesh,
             Madhya Pradesh, Maharashtra and Kerala.
           </p>
 
-          <p>
+          <p data-i18n="aboutCompanyParagraph2">
             Our equipment gallery includes excavators, hydraulic
             breakers and dumpers. Contact us to discuss current
             availability and project requirements.
           </p>
+
         </div>
+
 
         <img
           src="/images/logo.jpg"
           alt="Shree Yadunandan Enterprise logo"
           style="object-fit:contain;background:#f4f6f8;padding:35px"
+          loading="lazy"
         >
 
       </div>
+
     </section>
 
-    <!-- Business Contacts -->
+
+    <!-- BUSINESS CONTACTS -->
     <section class="section soft">
+
       <div class="container">
 
         <div class="section-head">
-          <span class="kicker">Our team</span>
-          <h2>Business contacts</h2>
+
+          <span class="kicker" data-i18n="aboutTeamKicker">
+            Our team
+          </span>
+
+          <h2 data-i18n="aboutTeamTitle">
+            Business contacts
+          </h2>
+
         </div>
+
 
         <div class="people">
 
+          <!-- CONTACT 1 -->
           <article class="person">
+
             <img
               src="/images/nileshbhai.jpg"
               alt="Nileshbhai Chavda"
+              loading="lazy"
             >
 
             <div>
+
               <h3>Nileshbhai Chavda</h3>
-              <p>Business Contact</p>
+
+              <p data-i18n="businessContact">
+                Business Contact
+              </p>
 
               <a href="tel:+919737799755">
                 +91 97377 99755
               </a>
+
             </div>
+
           </article>
 
+
+          <!-- CONTACT 2 -->
           <article class="person">
+
             <img
               src="/images/anilbhai.jpg"
               alt="Anilbhai Suva"
+              loading="lazy"
             >
 
             <div>
+
               <h3>Anilbhai Suva</h3>
-              <p>Business Contact</p>
+
+              <p data-i18n="businessContact">
+                Business Contact
+              </p>
 
               <a href="tel:+917990348678">
                 +91 79903 48678
               </a>
+
             </div>
+
           </article>
 
         </div>
+
       </div>
+
     </section>
 
   </main>
 
-  <!-- Footer -->
+
+  <!-- FOOTER -->
   <footer class="site-footer">
+
     <div class="container">
 
       <div class="footgrid">
 
         <div>
+
           <h3>Shree Yadunandan Enterprise</h3>
 
-          <p>
+          <p data-i18n="footerDescription">
             Infrastructure-sector experience and heavy machinery
             operations since 2004. Based in Jamnagar, Gujarat, India.
           </p>
+
         </div>
 
+
         <div>
-          <h3>Explore</h3>
+
+          <h3 data-i18n="footerExplore">
+            Explore
+          </h3>
 
           <div class="links">
-            <a href="/about.html">About Us</a>
-            <a href="/services.html">Services</a>
-            <a href="/machinery.html">Machinery</a>
-            <a href="/experience.html">Experience</a>
+
+            <a href="/about.html" data-i18n="navAbout">About Us</a>
+
+            <a href="/services.html" data-i18n="navServices">Services</a>
+
+            <a href="/machinery.html" data-i18n="navMachinery">Machinery</a>
+
+            <a href="/experience.html" data-i18n="navExperience">Experience</a>
+
           </div>
+
         </div>
 
+
         <div>
-          <h3>Business Enquiries</h3>
+
+          <h3 data-i18n="footerEnquiries">
+            Business Enquiries
+          </h3>
 
           <div class="links">
+
             <a href="tel:+919737799755">
               +91 97377 99755
             </a>
@@ -252,31 +413,46 @@
               href="https://maps.app.goo.gl/2iMzkSXdpaFVbEL87"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="footerLocation"
             >
               Jamnagar, Gujarat
             </a>
+
           </div>
+
         </div>
 
       </div>
 
+
       <div class="copyright">
+
         © <span data-year>2026</span>
-        Shree Yadunandan Enterprise. All rights reserved.
+
+        Shree Yadunandan Enterprise.
+
+        <span data-i18n="copyright">
+          All rights reserved.
+        </span>
+
       </div>
 
     </div>
+
   </footer>
 
-  <!-- WhatsApp Button -->
+
+  <!-- WHATSAPP BUTTON -->
   <a
     class="whatsapp"
     href="https://wa.me/917990348678"
     target="_blank"
     rel="noopener noreferrer"
+    data-i18n="whatsapp"
   >
     WhatsApp ↗
   </a>
+
 
 </body>
 </html>
