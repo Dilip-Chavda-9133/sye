@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://syeinfra.vercel.app/sitemap.xml
+Sitemap: https://syeinfrastructure.vercel.app/sitemap.xml

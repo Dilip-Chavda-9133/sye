@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       machineryKicker: "Equipment highlights",
       machineryTitle: "Machinery in our fleet gallery",
-      machineryDescription: "Selected equipment information and photographs shared by the company.",
       machine1Description: "BTC Drilmax 810 hydraulic breaker.",
       machine2Description: "Hyva hydraulic tipping system.",
       machine3Description: "Indus Saga 200 hydraulic breaker.",
@@ -340,10 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       businessRelationships: "Business relationships",
       experienceCompaniesTitle: "Companies Named in Our Work History",
-      experienceCompaniesDescription: "Names listed based on information supplied for this website. No endorsement or current affiliation is implied.",
       companyReference: "Company reference",
-
-      experienceNotice: "For a stronger project portfolio, add verified project names, dates, locations, scope details and client-approved photographs. Do not publish confidential information or client logos without permission.",
 
       contactPageTitle: "Contact | Shree Yadunandan Enterprise, Jamnagar",
       contactBreadcrumb: "Contact",
